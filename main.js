@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   /* ----- HAMBURGER MENU ----- */
-  const hamburger = document.querySelector('.nav-hamburger');
+  const hamburger = document.querySelector('.nav-toggle, .nav-hamburger');
   const navLinks  = document.querySelector('.nav-links');
   const navCta    = document.querySelector('.nav-cta');
   if (hamburger && navLinks) {

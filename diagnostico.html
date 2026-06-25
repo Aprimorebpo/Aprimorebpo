@@ -21,17 +21,17 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="../css/style.css">
 
   <style>
-    body { background: var(--cinza-bg); }
+    body { background: var(--bg-1); }
 
     /* Multi-step wizard container */
     .diag-container { max-width: 840px; margin: 0 auto; padding: 0 24px 80px; }
     .diag-card {
-      background: var(--branco);
+      background: var(--bg-1);
       border-radius: var(--radius-lg);
       padding: 48px;
       box-shadow: var(--shadow-md);
@@ -48,27 +48,27 @@
       font-size: 4rem; font-weight: 900;
       fill: var(--verde);
     }
-    #gaugeClass { font-size: 1.1rem; font-weight: 700; fill: var(--dourado); }
+    #gaugeClass { font-size: 1.1rem; font-weight: 700; fill: var(--ouro); }
 
     /* Result section */
     .result-wrap { animation: fadeInUp 0.5s ease; }
     .score-card {
-      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-mid) 100%);
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-md) 100%);
       border-radius: var(--radius-lg);
       padding: 40px;
       text-align: center;
       margin-bottom: 32px;
-      color: var(--branco);
+      color: #ffffff;
     }
     .score-num-big {
       font-size: 5rem; font-weight: 900;
-      color: var(--dourado);
+      color: var(--ouro);
       line-height: 1;
     }
     .score-label-big {
       font-size: 1.5rem;
       font-weight: 700;
-      color: var(--branco);
+      color: #ffffff;
       margin-bottom: 8px;
     }
     .score-desc { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 480px; margin: 0 auto; }
@@ -82,13 +82,13 @@
     }
     .score-bar-fill {
       height: 100%;
-      background: var(--dourado);
+      background: var(--ouro);
       border-radius: 50px;
       transition: width 1.5s cubic-bezier(0.4,0,0.2,1);
     }
     .result-section-card {
-      background: var(--branco);
-      border: 1px solid var(--cinza-light);
+      background: var(--bg-1);
+      border: 1px solid var(--borda);
       border-radius: var(--radius-md);
       padding: 28px 32px;
       margin-bottom: 20px;
@@ -104,7 +104,7 @@
     }
     .result-section-icon {
       width: 36px; height: 36px;
-      background: var(--dourado-pale);
+      background: rgba(196,166,125,0.08);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -117,29 +117,29 @@
       align-items: flex-start;
       margin-bottom: 10px;
       font-size: 0.95rem;
-      color: var(--cinza-text);
+      color: var(--texto-md);
       line-height: 1.6;
     }
-    .result-item .ri-dot { color: var(--dourado); font-size: 0.6rem; margin-top: 7px; flex-shrink: 0; }
+    .result-item .ri-dot { color: var(--ouro); font-size: 0.6rem; margin-top: 7px; flex-shrink: 0; }
     .alert-box {
       display: flex; align-items: flex-start;
       gap: 14px;
-      background: #fff8f0;
+      background: var(--bg-2);
       border: 1px solid #f5d5a0;
-      border-left: 4px solid var(--dourado);
+      border-left: 4px solid var(--ouro);
       border-radius: var(--radius-md);
       padding: 20px 24px;
       margin: 20px 0;
     }
     .alert-icon { font-size: 1.3rem; flex-shrink: 0; }
     .cta-result {
-      background: linear-gradient(135deg, var(--verde), var(--verde-mid));
+      background: linear-gradient(135deg, var(--verde), var(--verde-md));
       border-radius: var(--radius-lg);
       padding: 40px;
       text-align: center;
       margin-top: 32px;
     }
-    .cta-result h3 { color: var(--branco); margin-bottom: 12px; }
+    .cta-result h3 { color: #ffffff; margin-bottom: 12px; }
     .cta-result p  { color: rgba(255,255,255,0.75); margin-bottom: 28px; }
     .cta-result-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
@@ -150,7 +150,7 @@
       gap: 10px;
       margin-top: 20px;
       font-size: 0.88rem;
-      color: var(--cinza-text);
+      color: var(--texto-md);
       cursor: pointer;
     }
     .lgpd-check input { margin-top: 2px; accent-color: var(--verde); }
@@ -187,22 +187,22 @@
 <!-- HERO -->
 <section class="diag-hero">
   <div class="container">
-    <div class="badge" style="background:rgba(196,166,125,0.1);border-color:rgba(196,166,125,0.4);color:var(--dourado);margin-bottom:20px">
+    <div class="badge" style="background:rgba(196,166,125,0.1);border-color:rgba(196,166,125,0.4);color:var(--ouro);margin-bottom:20px">
       <i class="fas fa-star"></i> 100% Gratuito — Sem Compromisso
     </div>
-    <h1>Raio-X Financeiro<br><span style="color:var(--dourado)">Empresarial</span></h1>
+    <h1>Raio-X Financeiro<br><span style="color:var(--ouro)">Empresarial</span></h1>
     <p>Responda 20 perguntas e descubra o Score Financeiro da sua empresa. Receba um relatório completo com análise, riscos e plano de ação personalizado.</p>
     <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:32px">
       <div style="text-align:center">
-        <div style="font-size:1.5rem;font-weight:900;color:var(--dourado)">5 min</div>
+        <div style="font-size:1.5rem;font-weight:900;color:var(--ouro)">5 min</div>
         <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);font-weight:700;text-transform:uppercase">Para responder</div>
       </div>
       <div style="text-align:center">
-        <div style="font-size:1.5rem;font-weight:900;color:var(--dourado)">20</div>
+        <div style="font-size:1.5rem;font-weight:900;color:var(--ouro)">20</div>
         <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);font-weight:700;text-transform:uppercase">Perguntas</div>
       </div>
       <div style="text-align:center">
-        <div style="font-size:1.5rem;font-weight:900;color:var(--dourado)">1</div>
+        <div style="font-size:1.5rem;font-weight:900;color:var(--ouro)">1</div>
         <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);font-weight:700;text-transform:uppercase">Relatório personalizado</div>
       </div>
     </div>
@@ -338,7 +338,7 @@
       <div id="questionArea"></div>
 
       <div class="diag-nav" style="margin-top:32px">
-        <button class="btn btn-outline" id="btnPrev" onclick="prevQuestion()" style="color:var(--verde);border-color:var(--cinza-light)">
+        <button class="btn btn-outline" id="btnPrev" onclick="prevQuestion()" style="color:var(--verde);border-color:var(--borda)">
           <i class="fas fa-arrow-left"></i> Anterior
         </button>
         <button class="btn btn-primary" id="btnNext" onclick="nextQuestion()">
@@ -371,7 +371,7 @@
           <div class="result-section-icon">📋</div>
           Resumo Executivo
         </div>
-        <p id="resultSummary" style="color:var(--cinza-text);line-height:1.75"></p>
+        <p id="resultSummary" style="color:var(--texto-md);line-height:1.75"></p>
       </div>
 
       <!-- Problemas Encontrados -->
@@ -415,7 +415,7 @@
         <div class="alert-icon">💡</div>
         <div>
           <strong style="color:var(--verde)">Como o BPO Financeiro pode ajudar?</strong>
-          <p id="resultBPO" style="margin-top:8px;font-size:0.95rem;color:var(--cinza-text)"></p>
+          <p id="resultBPO" style="margin-top:8px;font-size:0.95rem;color:var(--texto-md)"></p>
         </div>
       </div>
 
