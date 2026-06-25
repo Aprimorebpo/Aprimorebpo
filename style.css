@@ -333,6 +333,7 @@ em { font-style: normal; color: var(--ouro); }
 .hero-visual {
   position: relative;
   overflow: hidden;
+  min-height: calc(100vh - 68px);
 }
 .hero-photo {
   position: absolute;

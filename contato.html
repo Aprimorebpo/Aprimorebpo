@@ -168,30 +168,30 @@
             Entraremos em contato em até 24 horas úteis. Enquanto isso, siga-nos no Instagram @aprimorebpo.
           </div>
 
-          <form id="contactForm" onsubmit="submitForm(event)">
+          <form action="https://formspree.io/f/aprimorebpo" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="cNome">Nome Completo *</label>
-                <input type="text" id="cNome" class="form-input" placeholder="Seu nome" required>
+                <input type="text" name="nome" id="cNome" name="nome" class="form-input" placeholder="Seu nome" required>
               </div>
               <div class="form-group">
                 <label class="form-label" for="cEmpresa">Empresa</label>
-                <input type="text" id="cEmpresa" class="form-input" placeholder="Nome da empresa">
+                <input type="text" name="empresa" id="cEmpresa" name="empresa" class="form-input" placeholder="Nome da empresa">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" for="cEmail">E-mail *</label>
-                <input type="email" id="cEmail" class="form-input" placeholder="seu@email.com.br" required>
+                <input type="email" name="email" id="cEmail" name="email" class="form-input" placeholder="seu@email.com.br" required>
               </div>
               <div class="form-group">
                 <label class="form-label" for="cWhats">WhatsApp *</label>
-                <input type="tel" id="cWhats" class="form-input" placeholder="(00) 00000-0000" required>
+                <input type="tel" name="whatsapp" id="cWhats" name="whatsapp" class="form-input" placeholder="(00) 00000-0000" required>
               </div>
             </div>
             <div class="form-group">
               <label class="form-label" for="cAssunto">Assunto *</label>
-              <select id="cAssunto" class="form-select" required>
+              <select name="assunto" id="cAssunto" name="assunto" class="form-select" required>
                 <option value="">Selecione o assunto</option>
                 <option>Quero contratar o BPO Financeiro</option>
                 <option>Tenho dúvidas sobre os serviços</option>
@@ -203,12 +203,15 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="cMsg">Mensagem *</label>
-              <textarea id="cMsg" class="form-textarea" placeholder="Conte um pouco sobre a sua empresa e o que você precisa..." required></textarea>
+              <textarea name="mensagem" id="cMsg" name="mensagem" class="form-textarea" placeholder="Conte um pouco sobre a sua empresa e o que você precisa..." required></textarea>
             </div>
+            <input type="hidden" name="_subject" value="Novo contato — Aprimore BPO">
+            <input type="hidden" name="_next" value="https://aprimorebpo.vercel.app/obrigado.html">
             <label class="lgpd-check" style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;font-size:0.88rem;color:var(--texto-md);cursor:pointer">
-              <input type="checkbox" id="cLgpd" required style="margin-top:2px;accent-color:var(--verde)">
-              Li e concordo com a <a href="politica-privacidade.html" target="_blank" style="color:var(--verde)">Política de Privacidade</a> e autorizo o uso dos meus dados para contato, conforme a LGPD.
+              <input type="checkbox" name="lgpd" required style="margin-top:2px;accent-color:var(--ouro)">
+              Li e concordo com a <a href="politica-privacidade.html" target="_blank" style="color:var(--ouro)">Política de Privacidade</a> e autorizo o uso dos meus dados para contato, conforme a LGPD.
             </label>
+            <input type="hidden" name="_subject" value="Novo contato — Aprimore BPO">
             <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
               <i class="fas fa-paper-plane"></i> Enviar Mensagem
             </button>
