@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços de BPO Financeiro | Aprimore BPO</title>
+  <meta name="description" content="Conciliação bancária, fluxo de caixa, DRE gerencial, contas a pagar e a receber, indicadores financeiros e muito mais. Conheça todos os serviços da Aprimore BPO.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .service-detail {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--cinza-light);
+    }
+    .service-detail:nth-child(even) { background: var(--cinza-bg); }
+    .service-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .service-detail:nth-child(even) .service-detail-grid { direction: rtl; }
+    .service-detail:nth-child(even) .service-detail-grid > * { direction: ltr; }
+    .service-detail-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .service-detail h2 { color: var(--verde); margin-bottom: 16px; }
+    .service-detail p   { margin-bottom: 20px; }
+    .service-benefit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .sbl-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--cinza-text);
+    }
+    .sbl-check {
+      width: 20px; height: 20px;
+      background: var(--dourado-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--verde);
+      font-size: 0.65rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .service-visual {
+      background: linear-gradient(135deg, var(--verde), var(--verde-mid));
+      border-radius: var(--radius-lg);
+      padding: 48px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .sv-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(196,166,125,0.2);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      color: var(--branco);
+      font-size: 0.95rem;
+    }
+    .sv-dot {
+      width: 8px; height: 8px;
+      background: var(--dourado);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .service-detail-grid { grid-template-columns: 1fr; gap: 40px; }
+      .service-detail:nth-child(even) .service-detail-grid { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="Aprimore BPO" width="160" height="40">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html" class="active">Serviços</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="diagnostico.html">Diagnóstico</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="diagnostico.html" class="btn btn-primary btn-sm"><i class="fas fa-chart-line"></i> Diagnóstico Grátis</a>
+        <a href="https://wa.me/5565993510460" target="_blank" rel="noopener" class="btn btn-verde btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section style="background:linear-gradient(135deg,var(--verde),var(--verde-mid));padding:140px 0 80px;text-align:center">
+  <div class="container">
+    <div class="badge" style="background:rgba(196,166,125,0.1);border-color:rgba(196,166,125,0.4);color:var(--dourado);margin-bottom:20px">
+      <span class="badge-dot" style="background:var(--dourado)"></span> Soluções Completas
+    </div>
+    <h1 class="text-branco">Todos os serviços que o<br><span style="color:var(--dourado)">seu financeiro precisa</span></h1>
+    <p style="color:rgba(255,255,255,0.75);font-size:1.1rem;max-width:600px;margin:16px auto 0">Do operacional ao estratégico. Uma única empresa cuidando de tudo para você crescer com segurança.</p>
+  </div>
+</section>
+
+<!-- SERVIÇOS DETALHADOS -->
+
+<div id="conciliacao" class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">🏦</span>
+        <div class="badge"><span class="badge-dot"></span> Conciliação Bancária</div>
+        <h2>Suas contas conferidas.<br>Dia após dia.</h2>
+        <p>A conciliação bancária é a comparação entre os registros internos da empresa e os extratos bancários. Um erro nesse processo pode gerar decisões erradas baseadas em saldos fictícios.</p>
+        <p>Na Aprimore BPO, conciliamos todas as suas contas bancárias com precisão, identificando discrepâncias, lançamentos duplicados e movimentações não autorizadas.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Conciliação diária ou semanal de todas as contas</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Identificação imediata de divergências e erros</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Relatório de conciliação sempre atualizado</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Integração com seu sistema de gestão (ERP)</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Extrato Banco do Brasil ✅ Conciliado</div>
+        <div class="sv-item"><span class="sv-dot"></span> Extrato Bradesco ✅ Conciliado</div>
+        <div class="sv-item"><span class="sv-dot"></span> Conta PJ Nubank ✅ Conciliado</div>
+        <div class="sv-item"><span class="sv-dot"></span> Divergências encontradas: 0</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> Status: 100% Conciliado 🎯</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="fluxo" class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">💹</span>
+        <div class="badge"><span class="badge-dot"></span> Fluxo de Caixa</div>
+        <h2>Saiba sempre o que vai entrar<br>e o que vai sair.</h2>
+        <p>O fluxo de caixa é o coração financeiro da sua empresa. Sem ele, você voa às cegas. Com a Aprimore BPO, você terá projeções precisas de entradas e saídas para os próximos 30, 60 e 90 dias.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Atualização diária das movimentações</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Projeção de caixa para 30, 60 e 90 dias</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Alertas de possíveis insuficiências de caixa</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Análise de sazonalidade e tendências</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Entradas previstas Julho: R$ 48.200</div>
+        <div class="sv-item"><span class="sv-dot"></span> Saídas previstas Julho: R$ 31.500</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> Saldo projetado: R$ 16.700 📈</div>
+        <div class="sv-item"><span class="sv-dot"></span> Maior risco: semana 3 (pagamentos)</div>
+        <div class="sv-item"><span class="sv-dot"></span> Ação sugerida: antecipar recebíveis</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pagar" class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">📤</span>
+        <div class="badge"><span class="badge-dot"></span> Contas a Pagar</div>
+        <h2>Zero atrasos.<br>Zero juros desnecessários.</h2>
+        <p>Gerenciamos todas as obrigações financeiras da sua empresa: fornecedores, aluguel, folha, impostos e tudo mais. Cada pagamento no prazo certo, sem surpresas no extrato.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Cadastro e controle de todos os fornecedores</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Agendamento inteligente de pagamentos</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Relatório de pagamentos realizados e pendentes</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Alertas com antecedência de vencimentos</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Aluguel — 10/07 ✅ Agendado</div>
+        <div class="sv-item"><span class="sv-dot"></span> Fornecedor X — 15/07 ✅ Agendado</div>
+        <div class="sv-item"><span class="sv-dot"></span> DAS Simples — 20/07 ✅ Agendado</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> Multas e juros evitados: R$ 0,00 🎯</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="receber" class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">📥</span>
+        <div class="badge"><span class="badge-dot"></span> Contas a Receber</div>
+        <h2>Seu dinheiro chegando.<br>Na hora certa.</h2>
+        <p>Controlamos todo o ciclo de faturamento e recebimento: da emissão da cobrança até a confirmação do pagamento. Inadimplência monitorada e cobranças realizadas de forma profissional.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Controle completo de clientes e contratos</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Emissão e acompanhamento de cobranças</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Relatório de inadimplência e aging list</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Régua de cobrança automatizada</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Recebimentos confirmados: R$ 22.800</div>
+        <div class="sv-item"><span class="sv-dot"></span> A receber até final do mês: R$ 18.400</div>
+        <div class="sv-item"><span class="sv-dot"></span> Em atraso (+5 dias): R$ 1.200</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> Cobrança enviada automaticamente ✅</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="dre" class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">📊</span>
+        <div class="badge"><span class="badge-dot"></span> DRE Gerencial</div>
+        <h2>Saiba exatamente o quanto<br>sua empresa lucra.</h2>
+        <p>O DRE Gerencial é o retrato fiel do desempenho financeiro da sua empresa. Produzimos mensalmente um demonstrativo completo em linguagem clara, sem jargão contábil complicado.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>DRE mensal completo e atualizado</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Comparativo com meses anteriores</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Análise de margem bruta, operacional e líquida</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Linguagem simples e acessível para o empresário</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Receita Bruta: R$ 85.000</div>
+        <div class="sv-item"><span class="sv-dot"></span> Custos e Despesas: R$ (52.300)</div>
+        <div class="sv-item"><span class="sv-dot"></span> Lucro Operacional: R$ 32.700</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> Margem Líquida: 38,5% 📈</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="indicadores" class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">🎯</span>
+        <div class="badge"><span class="badge-dot"></span> Indicadores Financeiros</div>
+        <h2>Os números certos para<br>as decisões certas.</h2>
+        <p>Monitoramos os KPIs financeiros essenciais do seu negócio: lucratividade, rentabilidade, ponto de equilíbrio, ticket médio, margem de contribuição e muito mais.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Dashboard de indicadores atualizado mensalmente</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Análise de tendências e variações</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Comparativo com metas estabelecidas</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Alertas quando indicadores saem da faixa ideal</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Lucratividade: 38,5% ✅ Meta: 35%</div>
+        <div class="sv-item"><span class="sv-dot"></span> Ticket Médio: R$ 4.250 ✅ +12%</div>
+        <div class="sv-item"><span class="sv-dot"></span> Ponto de Equilíbrio: R$ 48.000</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> ROI dos investimentos: 24% ✅</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="planejamento" class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">🗺️</span>
+        <div class="badge"><span class="badge-dot"></span> Planejamento Financeiro</div>
+        <h2>Construa o futuro com<br>números reais.</h2>
+        <p>Planejamento financeiro não é luxo — é sobrevivência. Ajudamos a construir orçamentos, projeções e metas financeiras alinhadas com os objetivos de crescimento da sua empresa.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Orçamento anual detalhado (Budget)</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Revisões trimestrais e ajustes de rota</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Projeções de cenários (otimista, realista, pessimista)</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Metas financeiras SMART com acompanhamento</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Meta de Faturamento 2025: R$ 1,2M</div>
+        <div class="sv-item"><span class="sv-dot"></span> Progresso atual: 62% atingido ✅</div>
+        <div class="sv-item"><span class="sv-dot"></span> Meta de Margem: 35% — Atual: 38% 🎯</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> Próxima revisão: Setembro 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="relatorios" class="service-detail">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">📋</span>
+        <div class="badge"><span class="badge-dot"></span> Relatórios Gerenciais</div>
+        <h2>O resumo financeiro que<br>você realmente entende.</h2>
+        <p>Chega de relatórios complicados que ninguém lê. Nossos relatórios gerenciais são claros, visuais e focados nas informações que você precisa para tomar decisões.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Relatório executivo mensal completo</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Gráficos e dashboards visuais</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Análise dos resultados e plano de ação</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Reunião mensal de apresentação dos resultados</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Relatório de Junho 2025 ✅ Pronto</div>
+        <div class="sv-item"><span class="sv-dot"></span> Destaque: lucro cresceu 18% vs maio</div>
+        <div class="sv-item"><span class="sv-dot"></span> Alerta: despesas admin +8% (investigar)</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> Reunião agendada: 05/07 às 14h 📅</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="consultoria" class="service-detail" style="border-bottom:none">
+  <div class="container">
+    <div class="service-detail-grid">
+      <div>
+        <span class="service-detail-icon">💡</span>
+        <div class="badge"><span class="badge-dot"></span> Consultoria Financeira</div>
+        <h2>Estratégia financeira para<br>crescer sem travar.</h2>
+        <p>Além da operação, oferecemos consultoria estratégica: análise de viabilidade, estruturação de preços, avaliação de investimentos e suporte para decisões que impactam o futuro do negócio.</p>
+        <div class="service-benefit-list">
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Análise de viabilidade de novos projetos</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Revisão e otimização da precificação</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Suporte para captação de crédito e investimentos</span></div>
+          <div class="sbl-item"><div class="sbl-check">✓</div><span>Planejamento de saída do sócio ou expansão</span></div>
+        </div>
+        <a href="diagnostico.html" class="btn btn-verde">Quero esse serviço <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-visual">
+        <div class="sv-item"><span class="sv-dot"></span> Análise de nova filial: Viável ✅</div>
+        <div class="sv-item"><span class="sv-dot"></span> Margem mínima recomendada: 28%</div>
+        <div class="sv-item"><span class="sv-dot"></span> Prazo de retorno estimado: 14 meses</div>
+        <div class="sv-item" style="border-color:rgba(196,166,125,0.5)"><span class="sv-dot"></span> Recomendação: Avançar em Q4/2025 🚀</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Qual serviço sua empresa<br>precisa agora?</h2>
+    <p>Faça o Diagnóstico Financeiro Gratuito e descubra exatamente onde atuar primeiro para ter resultados rápidos.</p>
+    <div class="cta-buttons">
+      <a href="diagnostico.html" class="btn btn-primary btn-lg"><i class="fas fa-chart-line"></i> Diagnóstico Financeiro Grátis</a>
+      <a href="https://wa.me/5565993510460" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg"><i class="fab fa-whatsapp"></i> Falar com Especialista</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.08)">
+      <img src="../images/logo.png" alt="Aprimore BPO" height="36">
+      <span style="font-size:0.82rem;color:rgba(255,255,255,0.4)">© 2025 Aprimore BPO. Todos os direitos reservados.</span>
+      <a href="politica-privacidade.html" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.82rem">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5565993510460" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp" style="color:#fff;font-size:1.8rem"></i>
+</a>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

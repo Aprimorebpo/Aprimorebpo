@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidade | Aprimore BPO</title>
+  <meta name="description" content="Política de Privacidade da Aprimore BPO. Saiba como coletamos, usamos e protegemos seus dados em conformidade com a LGPD (Lei 13.709/2018).">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.aprimorebpo.com.br/pages/politica-privacidade.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .policy-hero {
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, #003d38 100%);
+      padding: 120px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .policy-hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 50%;
+      height: 180%;
+      background: radial-gradient(ellipse, rgba(196,166,125,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .policy-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(196,166,125,0.15);
+      border: 1px solid rgba(196,166,125,0.3);
+      color: var(--dourado);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .policy-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .policy-hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .policy-hero .last-update {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.65);
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      margin-top: 20px;
+    }
+
+    /* ===== POLICY LAYOUT ===== */
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      padding: 64px 0 96px;
+    }
+    .policy-nav {
+      position: sticky;
+      top: 90px;
+      align-self: start;
+    }
+    .policy-nav-inner {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(0,46,43,0.07);
+      box-shadow: 0 4px 24px rgba(0,46,43,0.06);
+    }
+    .policy-nav h4 {
+      font-size: 0.88rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(0,46,43,0.07);
+    }
+    .policy-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .policy-nav ul li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 0;
+      color: #666;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(0,46,43,0.05);
+      transition: color 0.2s;
+    }
+    .policy-nav ul li:last-child a { border-bottom: none; }
+    .policy-nav ul li a:hover { color: var(--verde-escuro); }
+    .policy-nav ul li a i { color: var(--dourado); font-size: 0.75rem; width: 14px; }
+
+    /* ===== LGPD HIGHLIGHT ===== */
+    .lgpd-highlight {
+      background: linear-gradient(135deg, rgba(0,46,43,0.04), rgba(0,46,43,0.02));
+      border: 1.5px solid rgba(0,46,43,0.1);
+      border-left: 4px solid var(--verde-escuro);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .lgpd-highlight i { font-size: 1.5rem; color: var(--verde-escuro); margin-top: 2px; flex-shrink: 0; }
+    .lgpd-highlight p { margin: 0; font-size: 0.93rem; color: #444; line-height: 1.65; }
+    .lgpd-highlight strong { color: var(--verde-escuro); }
+
+    /* ===== POLICY CONTENT ===== */
+    .policy-content {
+      max-width: 780px;
+    }
+    .policy-section {
+      margin-bottom: 52px;
+    }
+    .policy-section h2 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(0,46,43,0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .policy-section h2 i { color: var(--dourado); font-size: 1.1rem; }
+    .policy-section h3 {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+      margin: 24px 0 10px;
+    }
+    .policy-section p {
+      color: #555;
+      line-height: 1.78;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+    .policy-section ul {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 0 16px;
+    }
+    .policy-section ul li {
+      padding: 7px 0 7px 28px;
+      position: relative;
+      color: #555;
+      font-size: 0.93rem;
+      line-height: 1.65;
+      border-bottom: 1px solid rgba(0,46,43,0.04);
+    }
+    .policy-section ul li:last-child { border-bottom: none; }
+    .policy-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--dourado);
+    }
+
+    /* ===== RIGHTS TABLE ===== */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .right-card {
+      background: #fff;
+      border: 1px solid rgba(0,46,43,0.08);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .right-card:hover { box-shadow: 0 6px 24px rgba(0,46,43,0.1); }
+    .right-card i {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--verde-escuro), #003d38);
+      color: var(--dourado);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .right-card h4 {
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+      margin-bottom: 4px;
+    }
+    .right-card p {
+      font-size: 0.82rem;
+      color: #777;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ===== CONTACT CTA ===== */
+    .policy-cta {
+      background: linear-gradient(135deg, var(--verde-escuro), #003d38);
+      border-radius: 16px;
+      padding: 36px;
+      text-align: center;
+      margin-top: 52px;
+    }
+    .policy-cta h3 {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .policy-cta p {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.93rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .policy-cta .cta-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+      .policy-layout { grid-template-columns: 1fr; }
+      .policy-nav { display: none; }
+    }
+    @media (max-width: 768px) {
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" role="navigation" aria-label="Navegação principal">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Aprimore BPO - Página Inicial">
+        <img src="../images/logo.png" alt="Aprimore BPO Logo" width="180" height="44">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="diagnostico.html">Diagnóstico</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="diagnostico.html" class="btn btn-primary btn-sm">
+          <i class="fas fa-chart-line"></i> Diagnóstico Grátis
+        </a>
+        <a href="https://wa.me/5565993510460?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20BPO%20Financeiro." target="_blank" rel="noopener" class="btn btn-verde btn-sm">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="policy-hero">
+  <div class="container">
+    <div class="badge">
+      <i class="fas fa-shield-alt"></i> LGPD — Lei 13.709/2018
+    </div>
+    <h1>Política de Privacidade</h1>
+    <p>A Aprimore BPO respeita sua privacidade e está comprometida com a proteção dos seus dados pessoais.</p>
+    <div class="last-update">
+      <i class="far fa-calendar"></i> Última atualização: Janeiro de 2025
+    </div>
+  </div>
+</section>
+
+<!-- ========== POLICY CONTENT ========== -->
+<div class="container">
+  <div class="policy-layout">
+
+    <!-- SIDEBAR NAV -->
+    <aside class="policy-nav" aria-label="Índice da política de privacidade">
+      <div class="policy-nav-inner">
+        <h4>Índice</h4>
+        <ul>
+          <li><a href="#identificacao"><i class="fas fa-circle"></i> Identificação</a></li>
+          <li><a href="#dados-coletados"><i class="fas fa-circle"></i> Dados Coletados</a></li>
+          <li><a href="#finalidade"><i class="fas fa-circle"></i> Finalidade</a></li>
+          <li><a href="#base-legal"><i class="fas fa-circle"></i> Base Legal</a></li>
+          <li><a href="#compartilhamento"><i class="fas fa-circle"></i> Compartilhamento</a></li>
+          <li><a href="#cookies"><i class="fas fa-circle"></i> Cookies</a></li>
+          <li><a href="#armazenamento"><i class="fas fa-circle"></i> Armazenamento</a></li>
+          <li><a href="#direitos"><i class="fas fa-circle"></i> Seus Direitos</a></li>
+          <li><a href="#seguranca"><i class="fas fa-circle"></i> Segurança</a></li>
+          <li><a href="#menores"><i class="fas fa-circle"></i> Menores de Idade</a></li>
+          <li><a href="#alteracoes"><i class="fas fa-circle"></i> Alterações</a></li>
+          <li><a href="#contato-dpo"><i class="fas fa-circle"></i> Contato DPO</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="policy-content">
+
+      <!-- LGPD Highlight -->
+      <div class="lgpd-highlight">
+        <i class="fas fa-info-circle"></i>
+        <p>Esta Política de Privacidade foi elaborada em conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong> e demais normas aplicáveis. Ao utilizar nossos serviços ou navegar em nosso site, você concorda com os termos aqui descritos.</p>
+      </div>
+
+      <!-- 1. IDENTIFICAÇÃO -->
+      <section class="policy-section" id="identificacao">
+        <h2><i class="fas fa-building"></i> 1. Identificação do Controlador</h2>
+        <p>Esta política é aplicada pela <strong>Aprimore BPO</strong>, empresa especializada em BPO Financeiro, com sede em Várzea Grande, Mato Grosso, Brasil.</p>
+        <ul>
+          <li><strong>Empresa:</strong> Aprimore BPO</li>
+          <li><strong>Endereço:</strong> Várzea Grande / MT — Brasil</li>
+          <li><strong>Telefone:</strong> (65) 99351-0460</li>
+          <li><strong>Site:</strong> www.aprimorebpo.com.br</li>
+          <li><strong>Papel:</strong> Controlador de Dados Pessoais conforme a LGPD</li>
+        </ul>
+      </section>
+
+      <!-- 2. DADOS COLETADOS -->
+      <section class="policy-section" id="dados-coletados">
+        <h2><i class="fas fa-database"></i> 2. Dados Pessoais Coletados</h2>
+        <p>Coletamos dados pessoais apenas quando necessário para prestar nossos serviços, responder suas solicitações ou melhorar sua experiência. Os dados coletados incluem:</p>
+
+        <h3>2.1 Dados fornecidos diretamente por você:</h3>
+        <ul>
+          <li>Nome completo</li>
+          <li>Endereço de e-mail</li>
+          <li>Número de telefone e WhatsApp</li>
+          <li>Nome da empresa e cargo</li>
+          <li>Cidade e Estado</li>
+          <li>Segmento de atuação e porte da empresa</li>
+          <li>Respostas ao Diagnóstico Financeiro</li>
+          <li>Mensagens enviadas via formulário de contato</li>
+        </ul>
+
+        <h3>2.2 Dados coletados automaticamente:</h3>
+        <ul>
+          <li>Endereço IP e dados de geolocalização aproximada</li>
+          <li>Tipo de dispositivo, sistema operacional e navegador</li>
+          <li>Páginas visitadas e tempo de permanência</li>
+          <li>Origem do acesso (search, redes sociais, links diretos)</li>
+          <li>Cookies e tecnologias similares (veja seção 6)</li>
+        </ul>
+      </section>
+
+      <!-- 3. FINALIDADE -->
+      <section class="policy-section" id="finalidade">
+        <h2><i class="fas fa-bullseye"></i> 3. Finalidade do Tratamento</h2>
+        <p>Utilizamos seus dados pessoais exclusivamente para as seguintes finalidades:</p>
+        <ul>
+          <li>Prestar os serviços de BPO Financeiro contratados ou solicitados</li>
+          <li>Responder dúvidas, solicitações e mensagens de contato</li>
+          <li>Enviar o relatório do Diagnóstico Financeiro solicitado</li>
+          <li>Comunicar sobre nossos serviços, novidades e conteúdos (com seu consentimento)</li>
+          <li>Personalizar a experiência no site e nos serviços</li>
+          <li>Cumprir obrigações legais e regulatórias</li>
+          <li>Prevenir fraudes e garantir a segurança dos dados</li>
+          <li>Melhorar continuamente nosso site e serviços por meio de análises</li>
+        </ul>
+        <p>Não utilizamos seus dados para finalidades incompatíveis com as listadas acima sem o seu consentimento prévio.</p>
+      </section>
+
+      <!-- 4. BASE LEGAL -->
+      <section class="policy-section" id="base-legal">
+        <h2><i class="fas fa-gavel"></i> 4. Base Legal para o Tratamento</h2>
+        <p>O tratamento dos seus dados pessoais pela Aprimore BPO é fundamentado nas seguintes bases legais previstas na LGPD (Art. 7º):</p>
+        <ul>
+          <li><strong>Consentimento (Art. 7º, I):</strong> Quando você nos fornece seus dados voluntariamente através de formulários, com marcação da caixa de aceite.</li>
+          <li><strong>Execução de contrato (Art. 7º, V):</strong> Para prestação dos serviços de BPO contratados.</li>
+          <li><strong>Legítimo interesse (Art. 7º, IX):</strong> Para melhorias do site, análises de desempenho e segurança.</li>
+          <li><strong>Cumprimento de obrigação legal (Art. 7º, II):</strong> Quando exigido por legislação aplicável.</li>
+        </ul>
+      </section>
+
+      <!-- 5. COMPARTILHAMENTO -->
+      <section class="policy-section" id="compartilhamento">
+        <h2><i class="fas fa-share-alt"></i> 5. Compartilhamento de Dados</h2>
+        <p>A Aprimore BPO <strong>não vende, aluga ou comercializa seus dados pessoais</strong>. Podemos compartilhá-los apenas nas seguintes situações:</p>
+        <ul>
+          <li><strong>Prestadores de serviço:</strong> Ferramentas de análise, CRM, e-mail marketing e automação (como Google Analytics, RD Station, Brevo) que atuam como Operadores de dados e estão vinculados às mesmas obrigações de proteção.</li>
+          <li><strong>Obrigação legal:</strong> Quando exigido por autoridades competentes, ordem judicial ou dispositivo legal.</li>
+          <li><strong>Proteção de direitos:</strong> Para prevenir fraudes, defender nossos direitos legais ou proteger a segurança de usuários.</li>
+        </ul>
+        <p>Todos os terceiros com quem compartilhamos dados são contratualmente obrigados a proteger suas informações de acordo com a LGPD.</p>
+      </section>
+
+      <!-- 6. COOKIES -->
+      <section class="policy-section" id="cookies">
+        <h2><i class="fas fa-cookie-bite"></i> 6. Uso de Cookies</h2>
+        <p>Nosso site utiliza cookies e tecnologias similares para melhorar sua experiência de navegação. Os cookies são pequenos arquivos de texto armazenados no seu dispositivo.</p>
+
+        <h3>Tipos de cookies utilizados:</h3>
+        <ul>
+          <li><strong>Cookies essenciais:</strong> Necessários para o funcionamento do site. Não podem ser desativados.</li>
+          <li><strong>Cookies analíticos:</strong> Coletam informações sobre como você usa o site (ex: Google Analytics). Usados para melhorar o desempenho.</li>
+          <li><strong>Cookies de preferências:</strong> Armazenam suas escolhas (ex: aceite do banner de cookies).</li>
+          <li><strong>Cookies de marketing:</strong> Usados para exibir anúncios relevantes (mediante consentimento).</li>
+        </ul>
+        <p>Você pode gerenciar ou desativar cookies nas configurações do seu navegador. A desativação de cookies essenciais pode afetar o funcionamento do site.</p>
+      </section>
+
+      <!-- 7. ARMAZENAMENTO -->
+      <section class="policy-section" id="armazenamento">
+        <h2><i class="fas fa-clock"></i> 7. Prazo de Armazenamento</h2>
+        <p>Seus dados pessoais são mantidos apenas pelo tempo necessário para cumprir as finalidades para as quais foram coletados, ou conforme exigido por lei:</p>
+        <ul>
+          <li><strong>Dados de leads e contatos:</strong> Até 5 anos após o último contato ou enquanto houver interesse mútuo.</li>
+          <li><strong>Dados de clientes:</strong> Pelo prazo contratual acrescido de 5 anos para fins fiscais e legais.</li>
+          <li><strong>Dados do Diagnóstico Financeiro:</strong> Até 2 anos, salvo solicitação de exclusão anterior.</li>
+          <li><strong>Dados de navegação/cookies:</strong> Conforme configuração do cookie, geralmente até 2 anos.</li>
+          <li><strong>Obrigações legais:</strong> Pelo prazo determinado pela legislação aplicável.</li>
+        </ul>
+        <p>Após o término do prazo, os dados são excluídos de forma segura ou anonimizados.</p>
+      </section>
+
+      <!-- 8. DIREITOS DO TITULAR -->
+      <section class="policy-section" id="direitos">
+        <h2><i class="fas fa-user-shield"></i> 8. Seus Direitos como Titular</h2>
+        <p>A LGPD garante a você os seguintes direitos em relação aos seus dados pessoais (Art. 18):</p>
+
+        <div class="rights-grid">
+          <div class="right-card">
+            <i class="fas fa-eye"></i>
+            <div>
+              <h4>Acesso</h4>
+              <p>Solicitar uma cópia dos dados pessoais que mantemos sobre você.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <i class="fas fa-edit"></i>
+            <div>
+              <h4>Correção</h4>
+              <p>Solicitar a correção de dados incompletos, inexatos ou desatualizados.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <i class="fas fa-trash"></i>
+            <div>
+              <h4>Exclusão</h4>
+              <p>Solicitar a eliminação dos seus dados tratados com base no consentimento.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <i class="fas fa-hand-paper"></i>
+            <div>
+              <h4>Revogação</h4>
+              <p>Revogar o consentimento dado a qualquer momento, sem prejuízo.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <i class="fas fa-ban"></i>
+            <div>
+              <h4>Oposição</h4>
+              <p>Opor-se ao tratamento de dados realizado com base em legítimo interesse.</p>
+            </div>
+          </div>
+          <div class="right-card">
+            <i class="fas fa-info"></i>
+            <div>
+              <h4>Informação</h4>
+              <p>Ser informado sobre as entidades com quem compartilhamos seus dados.</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin-top:20px;">Para exercer qualquer um desses direitos, entre em contato pelo <strong>WhatsApp (65) 99351-0460</strong> ou por e-mail. Responderemos em até 15 dias úteis.</p>
+      </section>
+
+      <!-- 9. SEGURANÇA -->
+      <section class="policy-section" id="seguranca">
+        <h2><i class="fas fa-lock"></i> 9. Segurança dos Dados</h2>
+        <p>Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados pessoais contra acesso não autorizado, perda, destruição ou divulgação indevida, incluindo:</p>
+        <ul>
+          <li>Transmissão de dados via protocolo seguro HTTPS/SSL</li>
+          <li>Controle de acesso restrito aos dados por pessoal autorizado</li>
+          <li>Atualização regular de sistemas e softwares de segurança</li>
+          <li>Política interna de proteção e confidencialidade de dados</li>
+          <li>Armazenamento em servidores com padrões de segurança reconhecidos</li>
+        </ul>
+        <p>Em caso de incidente de segurança que possa acarretar risco ou dano relevante, notificaremos você e a ANPD (Autoridade Nacional de Proteção de Dados) conforme determinado pela LGPD.</p>
+      </section>
+
+      <!-- 10. MENORES -->
+      <section class="policy-section" id="menores">
+        <h2><i class="fas fa-child"></i> 10. Menores de Idade</h2>
+        <p>Nossos serviços são destinados exclusivamente a pessoas jurídicas e a maiores de 18 anos. Não coletamos intencionalmente dados pessoais de menores de 18 anos.</p>
+        <p>Se tomarmos conhecimento de que coletamos dados de um menor de idade sem o consentimento dos responsáveis legais, excluiremos essas informações imediatamente.</p>
+      </section>
+
+      <!-- 11. ALTERAÇÕES -->
+      <section class="policy-section" id="alteracoes">
+        <h2><i class="fas fa-sync-alt"></i> 11. Alterações nesta Política</h2>
+        <p>Esta Política de Privacidade pode ser atualizada periodicamente para refletir mudanças em nossas práticas, serviços ou obrigações legais.</p>
+        <p>Quando realizarmos alterações relevantes, notificaremos você por e-mail (se disponível) ou por aviso em destaque no site. A data da última atualização sempre estará visível no topo desta página.</p>
+        <p>Recomendamos que você revise esta política periodicamente. O uso continuado dos nossos serviços após a publicação de alterações implica aceitação das novas condições.</p>
+      </section>
+
+      <!-- 12. CONTATO DPO -->
+      <section class="policy-section" id="contato-dpo">
+        <h2><i class="fas fa-envelope"></i> 12. Contato e Encarregado (DPO)</h2>
+        <p>Para dúvidas, solicitações relacionadas aos seus dados pessoais ou para exercer seus direitos como titular, entre em contato:</p>
+        <ul>
+          <li><strong>Empresa:</strong> Aprimore BPO</li>
+          <li><strong>WhatsApp:</strong> (65) 99351-0460</li>
+          <li><strong>Localização:</strong> Várzea Grande / MT — Brasil</li>
+          <li><strong>Horário de atendimento:</strong> Segunda a Sexta, das 8h às 18h</li>
+        </ul>
+        <p>Você também pode registrar reclamações junto à <strong>ANPD (Autoridade Nacional de Proteção de Dados)</strong> caso considere que seus direitos não foram adequadamente atendidos: <a href="https://www.gov.br/anpd" target="_blank" rel="noopener" style="color:var(--verde-escuro);font-weight:700;">www.gov.br/anpd</a></p>
+      </section>
+
+      <!-- CTA -->
+      <div class="policy-cta">
+        <h3>Tem Dúvidas Sobre Sua Privacidade?</h3>
+        <p>Nossa equipe está pronta para esclarecer qualquer dúvida sobre o tratamento dos seus dados pessoais.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/5565993510460?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20a%20Política%20de%20Privacidade%20da%20Aprimore%20BPO." target="_blank" rel="noopener" class="btn btn-dourado">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+          </a>
+          <a href="contato.html" class="btn" style="background:rgba(255,255,255,0.1);border:1.5px solid rgba(255,255,255,0.25);color:#fff;">
+            <i class="fas fa-envelope"></i> Enviar Mensagem
+          </a>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="../images/logo.png" alt="Aprimore BPO" width="160" height="40" loading="lazy">
+        <p>Transformamos o financeiro da sua empresa em uma vantagem competitiva. BPO Financeiro especializado para PMEs.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram Aprimore BPO" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn Aprimore BPO" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/5565993510460" aria-label="WhatsApp Aprimore BPO" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="servicos.html#conciliacao">Conciliação Bancária</a></li>
+          <li><a href="servicos.html#fluxo">Fluxo de Caixa</a></li>
+          <li><a href="servicos.html#dre">DRE Gerencial</a></li>
+          <li><a href="servicos.html#indicadores">Indicadores Financeiros</a></li>
+          <li><a href="servicos.html#planejamento">Planejamento Financeiro</a></li>
+          <li><a href="servicos.html#consultoria">Consultoria</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="diagnostico.html">Diagnóstico Grátis</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="politica-privacidade.html" aria-current="page">Política de Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <div class="footer-contact">
+          <div class="footer-contact-item">
+            <i class="fas fa-phone" style="color:var(--dourado)"></i>
+            <a href="tel:+5565993510460">(65) 99351-0460</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fab fa-whatsapp" style="color:var(--dourado)"></i>
+            <a href="https://wa.me/5565993510460" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt" style="color:var(--dourado)"></i>
+            <span>Várzea Grande / MT</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-globe" style="color:var(--dourado)"></i>
+            <span>Atendimento Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Aprimore BPO. Todos os direitos reservados.</span>
+      <span class="footer-lgpd">
+        <i class="fas fa-shield-alt"></i> Este site está em conformidade com a LGPD (Lei 13.709/2018)
+      </span>
+      <a href="politica-privacidade.html" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.82rem" aria-current="page">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== WHATSAPP FLOAT ========== -->
+<a href="https://wa.me/5565993510460?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20privacidade."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Falar com a Aprimore BPO no WhatsApp">
+  <i class="fab fa-whatsapp" style="color:#fff;font-size:1.8rem"></i>
+</a>
+
+<!-- JS -->
+<script src="../js/main.js"></script>
+</body>
+</html>

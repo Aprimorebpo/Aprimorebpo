@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Aprimore BPO — Inteligência Financeira para Empresas</title>
+  <meta name="description" content="Artigos, guias e insights sobre gestão financeira, BPO, fluxo de caixa e DRE para empresários. Conteúdo gratuito da Aprimore BPO.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.aprimorebpo.com.br/pages/blog.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Blog Aprimore BPO | Inteligência Financeira Gratuita">
+  <meta property="og:description" content="Aprenda a organizar o financeiro da sua empresa. Conteúdo prático sobre BPO, DRE, fluxo de caixa e gestão.">
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.aprimorebpo.com.br/pages/blog.html">
+  <meta property="og:locale"      content="pt_BR">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Blog Aprimore BPO | Inteligência Financeira">
+  <meta name="twitter:description" content="Conteúdo gratuito sobre gestão financeira para empresários.">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Aprimore BPO",
+    "description": "Conteúdo sobre gestão financeira, BPO e inteligência empresarial.",
+    "url": "https://www.aprimorebpo.com.br/pages/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Aprimore BPO",
+      "url": "https://www.aprimorebpo.com.br"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* ===== BLOG-SPECIFIC STYLES ===== */
+    .blog-hero {
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, #004d48 60%, #003330 100%);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(196,166,125,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .blog-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(196,166,125,0.15);
+      border: 1px solid rgba(196,166,125,0.3);
+      color: var(--dourado);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .blog-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+    .blog-hero h1 span { color: var(--dourado); }
+    .blog-hero p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.15rem;
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .blog-search {
+      display: flex;
+      max-width: 520px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    .blog-search input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 14px 24px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: 'Lato', sans-serif;
+    }
+    .blog-search input::placeholder { color: rgba(255,255,255,0.45); }
+    .blog-search button {
+      background: var(--dourado);
+      border: none;
+      padding: 14px 24px;
+      cursor: pointer;
+      color: var(--verde-escuro);
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .blog-search button:hover { background: #d4b68d; }
+
+    /* ===== CATEGORIES ===== */
+    .blog-categories {
+      padding: 48px 0 0;
+    }
+    .categories-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .cat-btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 1.5px solid var(--verde-light);
+      background: transparent;
+      color: var(--verde-escuro);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Lato', sans-serif;
+    }
+    .cat-btn:hover,
+    .cat-btn.active {
+      background: var(--verde-escuro);
+      color: #fff;
+      border-color: var(--verde-escuro);
+    }
+
+    /* ===== FEATURED POST ===== */
+    .featured-post {
+      padding: 64px 0 0;
+    }
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,46,43,0.12);
+      border: 1px solid rgba(0,46,43,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 80px rgba(0,46,43,0.16);
+    }
+    .featured-img {
+      position: relative;
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, #004d48 100%);
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .featured-img .img-icon {
+      font-size: 7rem;
+      opacity: 0.12;
+      color: #fff;
+    }
+    .featured-img .feat-badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background: var(--dourado);
+      color: var(--verde-escuro);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .featured-img .feat-category {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+    }
+    .featured-content {
+      padding: 48px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-content .meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .featured-content .meta span {
+      font-size: 0.83rem;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .featured-content h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .featured-content p {
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .featured-content .read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--verde-escuro);
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 2px solid var(--dourado);
+      padding-bottom: 2px;
+      transition: gap 0.2s;
+    }
+    .featured-content .read-link:hover { gap: 14px; }
+
+    /* ===== POSTS GRID ===== */
+    .posts-section {
+      padding: 64px 0 80px;
+    }
+    .section-header-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .section-header-row h2 {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+    }
+    .see-all {
+      color: var(--verde-escuro);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.65;
+      transition: opacity 0.2s;
+    }
+    .see-all:hover { opacity: 1; }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .post-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(0,46,43,0.07);
+      box-shadow: 0 4px 24px rgba(0,46,43,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .post-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,46,43,0.13);
+    }
+    .post-card-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-card-img .card-icon {
+      font-size: 4rem;
+      opacity: 0.18;
+      color: #fff;
+    }
+    .post-card-img .card-cat {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 3px 12px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+    .post-card-body {
+      padding: 24px;
+    }
+    .post-card-body .meta {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .post-card-body .meta span {
+      font-size: 0.78rem;
+      color: #aaa;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .post-card-body h3 {
+      font-size: 1.05rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+    .post-card-body p {
+      font-size: 0.88rem;
+      color: #777;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+    .post-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-top: 1px solid rgba(0,46,43,0.06);
+    }
+    .post-card-footer .author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: #888;
+      font-weight: 700;
+    }
+    .author-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--verde-escuro), #004d48);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dourado);
+      font-size: 0.75rem;
+      font-weight: 900;
+    }
+    .post-card-footer .read-more {
+      color: var(--verde-escuro);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: gap 0.2s;
+    }
+    .post-card-footer .read-more:hover { gap: 10px; }
+
+    /* ===== GRADIENT VARIANTS FOR POST CARDS ===== */
+    .bg-verde { background: linear-gradient(135deg, var(--verde-escuro), #004d48); }
+    .bg-dourado { background: linear-gradient(135deg, #9b7d53, #c4a67d); }
+    .bg-dark { background: linear-gradient(135deg, #1a2a2a, #003330); }
+    .bg-accent { background: linear-gradient(135deg, #2d6b63, #003d38); }
+    .bg-warm { background: linear-gradient(135deg, #7a5c2e, #c4a67d); }
+    .bg-slate { background: linear-gradient(135deg, #2c3e50, #1a2a2a); }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter-section {
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, #003d38 100%);
+      padding: 72px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter-section::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 50%;
+      height: 160%;
+      background: radial-gradient(ellipse, rgba(196,166,125,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .newsletter-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .newsletter-text h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .newsletter-text h2 span { color: var(--dourado); }
+    .newsletter-text p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .newsletter-form input {
+      padding: 15px 22px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: 'Lato', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .newsletter-form input:focus { border-color: var(--dourado); }
+    .newsletter-form .btn { width: 100%; justify-content: center; }
+    .newsletter-form .lgpd-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ===== TOPICS SIDEBAR ===== */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      padding: 0 0 80px;
+    }
+    .sidebar-widget {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid rgba(0,46,43,0.07);
+      box-shadow: 0 4px 24px rgba(0,46,43,0.05);
+      margin-bottom: 28px;
+    }
+    .sidebar-widget h4 {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(0,46,43,0.08);
+    }
+    .topic-list { list-style: none; padding: 0; margin: 0; }
+    .topic-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,46,43,0.05);
+      cursor: pointer;
+    }
+    .topic-list li:last-child { border-bottom: none; }
+    .topic-list li a {
+      color: #555;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    .topic-list li:hover a { color: var(--verde-escuro); }
+    .topic-count {
+      background: rgba(0,46,43,0.07);
+      color: var(--verde-escuro);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.76rem;
+      font-weight: 900;
+    }
+    .popular-post {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(0,46,43,0.05);
+      cursor: pointer;
+    }
+    .popular-post:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .popular-thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 1.4rem;
+    }
+    .popular-info h5 {
+      font-size: 0.86rem;
+      font-weight: 900;
+      color: var(--verde-escuro);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+    .popular-info span {
+      font-size: 0.76rem;
+      color: #aaa;
+    }
+
+    /* ===== PAGINATION ===== */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 40px 0 0;
+    }
+    .page-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(0,46,43,0.15);
+      background: #fff;
+      color: var(--verde-escuro);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      font-family: 'Lato', sans-serif;
+    }
+    .page-btn:hover,
+    .page-btn.active {
+      background: var(--verde-escuro);
+      color: #fff;
+      border-color: var(--verde-escuro);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-img { min-height: 220px; }
+      .newsletter-inner { grid-template-columns: 1fr; gap: 36px; }
+      .blog-layout { grid-template-columns: 1fr; }
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .posts-grid { grid-template-columns: 1fr; }
+      .blog-hero { padding: 100px 0 60px; }
+      .featured-content { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar" role="navigation" aria-label="Navegação principal">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Aprimore BPO - Página Inicial">
+        <img src="../images/logo.png" alt="Aprimore BPO Logo" width="180" height="44">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="diagnostico.html">Diagnóstico</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="diagnostico.html" class="btn btn-primary btn-sm">
+          <i class="fas fa-chart-line"></i> Diagnóstico Grátis
+        </a>
+        <a href="https://wa.me/5565993510460?text=Olá!%20Quero%20saber%20mais%20sobre%20o%20BPO%20Financeiro." target="_blank" rel="noopener" class="btn btn-verde btn-sm">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== BLOG HERO ========== -->
+<section class="blog-hero">
+  <div class="container">
+    <div class="badge">
+      <i class="fas fa-book-open"></i> Blog Aprimore BPO
+    </div>
+    <h1>Inteligência Financeira<br><span>para Quem Quer Crescer</span></h1>
+    <p>Artigos práticos sobre gestão financeira, BPO e como transformar dados em decisões inteligentes para o seu negócio.</p>
+    <div class="blog-search" role="search">
+      <input type="text" placeholder="Buscar artigos sobre gestão financeira..." aria-label="Buscar artigos">
+      <button aria-label="Pesquisar"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CATEGORIES ========== -->
+<section class="blog-categories">
+  <div class="container">
+    <div class="categories-wrap" role="group" aria-label="Categorias do blog">
+      <button class="cat-btn active">Todos</button>
+      <button class="cat-btn">Gestão Financeira</button>
+      <button class="cat-btn">Fluxo de Caixa</button>
+      <button class="cat-btn">DRE Gerencial</button>
+      <button class="cat-btn">Planejamento</button>
+      <button class="cat-btn">Indicadores</button>
+      <button class="cat-btn">BPO Financeiro</button>
+      <button class="cat-btn">Crescimento</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED POST ========== -->
+<section class="featured-post">
+  <div class="container">
+    <article class="featured-card" aria-label="Artigo em destaque">
+      <div class="featured-img bg-verde">
+        <i class="fas fa-chart-line card-icon"></i>
+        <span class="feat-badge">✦ Destaque</span>
+        <span class="feat-category">Gestão Financeira</span>
+      </div>
+      <div class="featured-content">
+        <div class="meta">
+          <span><i class="far fa-calendar"></i> 20 Jun 2025</span>
+          <span><i class="far fa-clock"></i> 8 min de leitura</span>
+          <span><i class="far fa-eye"></i> 2.341 leituras</span>
+        </div>
+        <h2>Por Que Sua Empresa Fatura Bem Mas o Caixa Está Sempre no Limite?</h2>
+        <p>Este é o paradoxo que mata mais negócios do que qualquer crise econômica. Você vende, fatura, trabalha sem parar — e ainda assim o dinheiro some. Descubra os 5 motivos por trás desse fenômeno e como reverter a situação com gestão financeira inteligente.</p>
+        <a href="#" class="read-link">
+          Ler artigo completo <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== POSTS + SIDEBAR ========== -->
+<div class="container">
+  <div class="blog-layout">
+
+    <!-- MAIN POSTS -->
+    <main>
+      <section class="posts-section" style="padding-top:48px;">
+        <div class="section-header-row">
+          <h2>Artigos Recentes</h2>
+          <a href="#" class="see-all">Ver todos <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="posts-grid" role="list">
+
+          <!-- Post 1 -->
+          <article class="post-card" role="listitem">
+            <div class="post-card-img bg-verde">
+              <i class="fas fa-balance-scale card-icon"></i>
+              <span class="card-cat">DRE Gerencial</span>
+            </div>
+            <div class="post-card-body">
+              <div class="meta">
+                <span><i class="far fa-calendar"></i> 15 Jun 2025</span>
+                <span><i class="far fa-clock"></i> 6 min</span>
+              </div>
+              <h3>DRE Gerencial: O Relatório Que Todo Empresário Precisa Entender</h3>
+              <p>Você conhece a diferença entre faturamento e lucro real? A DRE gerencial revela o que o extrato bancário esconde.</p>
+            </div>
+            <div class="post-card-footer">
+              <div class="author">
+                <div class="author-avatar">AB</div>
+                Aprimore BPO
+              </div>
+              <a href="#" class="read-more">Ler <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="post-card" role="listitem">
+            <div class="post-card-img bg-dark">
+              <i class="fas fa-money-bill-wave card-icon"></i>
+              <span class="card-cat">Fluxo de Caixa</span>
+            </div>
+            <div class="post-card-body">
+              <div class="meta">
+                <span><i class="far fa-calendar"></i> 10 Jun 2025</span>
+                <span><i class="far fa-clock"></i> 5 min</span>
+              </div>
+              <h3>Fluxo de Caixa: Como Projetar os Próximos 90 Dias com Precisão</h3>
+              <p>A previsibilidade financeira não é sorte — é método. Aprenda a montar uma projeção de caixa que realmente funciona.</p>
+            </div>
+            <div class="post-card-footer">
+              <div class="author">
+                <div class="author-avatar">AB</div>
+                Aprimore BPO
+              </div>
+              <a href="#" class="read-more">Ler <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="post-card" role="listitem">
+            <div class="post-card-img bg-accent">
+              <i class="fas fa-university card-icon"></i>
+              <span class="card-cat">Conciliação</span>
+            </div>
+            <div class="post-card-body">
+              <div class="meta">
+                <span><i class="far fa-calendar"></i> 5 Jun 2025</span>
+                <span><i class="far fa-clock"></i> 4 min</span>
+              </div>
+              <h3>Conciliação Bancária: O Que É e Por Que Não Pode Ser Ignorada</h3>
+              <p>Uma divergência de centavos pode esconder um problema de milhares. Entenda como a conciliação bancária protege seu negócio.</p>
+            </div>
+            <div class="post-card-footer">
+              <div class="author">
+                <div class="author-avatar">AB</div>
+                Aprimore BPO
+              </div>
+              <a href="#" class="read-more">Ler <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="post-card" role="listitem">
+            <div class="post-card-img bg-warm">
+              <i class="fas fa-tachometer-alt card-icon"></i>
+              <span class="card-cat">Indicadores</span>
+            </div>
+            <div class="post-card-body">
+              <div class="meta">
+                <span><i class="far fa-calendar"></i> 1 Jun 2025</span>
+                <span><i class="far fa-clock"></i> 7 min</span>
+              </div>
+              <h3>Os 7 Indicadores Financeiros Que Toda PME Precisa Monitorar</h3>
+              <p>Se você não mede, não gerencia. Conheça os KPIs financeiros essenciais para tomar decisões com confiança.</p>
+            </div>
+            <div class="post-card-footer">
+              <div class="author">
+                <div class="author-avatar">AB</div>
+                Aprimore BPO
+              </div>
+              <a href="#" class="read-more">Ler <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="post-card" role="listitem">
+            <div class="post-card-img bg-slate">
+              <i class="fas fa-handshake card-icon"></i>
+              <span class="card-cat">BPO Financeiro</span>
+            </div>
+            <div class="post-card-body">
+              <div class="meta">
+                <span><i class="far fa-calendar"></i> 25 Mai 2025</span>
+                <span><i class="far fa-clock"></i> 6 min</span>
+              </div>
+              <h3>BPO Financeiro vs. Contador: Qual a Diferença e Quando Contratar?</h3>
+              <p>Muitos empresários confundem os dois serviços. Entenda a diferença e descubra qual a sua empresa realmente precisa agora.</p>
+            </div>
+            <div class="post-card-footer">
+              <div class="author">
+                <div class="author-avatar">AB</div>
+                Aprimore BPO
+              </div>
+              <a href="#" class="read-more">Ler <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Post 6 -->
+          <article class="post-card" role="listitem">
+            <div class="post-card-img bg-dourado">
+              <i class="fas fa-seedling card-icon"></i>
+              <span class="card-cat">Crescimento</span>
+            </div>
+            <div class="post-card-body">
+              <div class="meta">
+                <span><i class="far fa-calendar"></i> 20 Mai 2025</span>
+                <span><i class="far fa-clock"></i> 5 min</span>
+              </div>
+              <h3>Como Sair do Caos Financeiro e Começar a Crescer com Previsibilidade</h3>
+              <p>Da desorganização total ao crescimento estruturado: o roteiro que nossos clientes seguiram para transformar o financeiro.</p>
+            </div>
+            <div class="post-card-footer">
+              <div class="author">
+                <div class="author-avatar">AB</div>
+                Aprimore BPO
+              </div>
+              <a href="#" class="read-more">Ler <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+        </div><!-- /.posts-grid -->
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="Paginação do blog">
+          <button class="page-btn active" aria-current="page">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+        </nav>
+
+      </section>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside aria-label="Sidebar do blog">
+
+      <!-- CTA Diagnóstico -->
+      <div class="sidebar-widget" style="background: linear-gradient(135deg, var(--verde-escuro), #003d38); text-align:center; padding:32px 24px;">
+        <i class="fas fa-chart-pie" style="font-size:2.5rem;color:var(--dourado);margin-bottom:16px;display:block;"></i>
+        <h4 style="color:#fff;border-color:rgba(255,255,255,0.15);font-size:1.1rem;">Diagnóstico Financeiro Gratuito</h4>
+        <p style="color:rgba(255,255,255,0.72);font-size:0.88rem;line-height:1.6;margin-bottom:20px;">Descubra a saúde financeira da sua empresa em 5 minutos. Relatório personalizado, grátis.</p>
+        <a href="diagnostico.html" class="btn btn-dourado" style="width:100%;justify-content:center;font-size:0.9rem;">
+          <i class="fas fa-rocket"></i> Fazer Diagnóstico
+        </a>
+      </div>
+
+      <!-- Categorias -->
+      <div class="sidebar-widget">
+        <h4><i class="fas fa-tag" style="color:var(--dourado);margin-right:8px;"></i>Categorias</h4>
+        <ul class="topic-list">
+          <li><a href="#">Gestão Financeira</a><span class="topic-count">12</span></li>
+          <li><a href="#">Fluxo de Caixa</a><span class="topic-count">8</span></li>
+          <li><a href="#">DRE Gerencial</a><span class="topic-count">7</span></li>
+          <li><a href="#">Planejamento</a><span class="topic-count">6</span></li>
+          <li><a href="#">Indicadores KPI</a><span class="topic-count">9</span></li>
+          <li><a href="#">BPO Financeiro</a><span class="topic-count">11</span></li>
+          <li><a href="#">Crescimento</a><span class="topic-count">5</span></li>
+        </ul>
+      </div>
+
+      <!-- Posts Populares -->
+      <div class="sidebar-widget">
+        <h4><i class="fas fa-fire" style="color:var(--dourado);margin-right:8px;"></i>Mais Lidos</h4>
+
+        <div class="popular-post">
+          <div class="popular-thumb bg-verde"><i class="fas fa-chart-line"></i></div>
+          <div class="popular-info">
+            <h5>Por Que Sua Empresa Fatura Bem Mas o Caixa Está Vazio?</h5>
+            <span><i class="far fa-eye"></i> 2.341 leituras</span>
+          </div>
+        </div>
+        <div class="popular-post">
+          <div class="popular-thumb bg-dark"><i class="fas fa-tachometer-alt"></i></div>
+          <div class="popular-info">
+            <h5>Os 7 Indicadores Que Toda PME Precisa Monitorar</h5>
+            <span><i class="far fa-eye"></i> 1.876 leituras</span>
+          </div>
+        </div>
+        <div class="popular-post">
+          <div class="popular-thumb bg-accent"><i class="fas fa-handshake"></i></div>
+          <div class="popular-info">
+            <h5>BPO Financeiro vs. Contador: Qual a Diferença?</h5>
+            <span><i class="far fa-eye"></i> 1.492 leituras</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- WhatsApp CTA -->
+      <div class="sidebar-widget" style="text-align:center;">
+        <i class="fab fa-whatsapp" style="font-size:2rem;color:#25D366;margin-bottom:12px;display:block;"></i>
+        <h4 style="font-size:0.95rem;">Tem Dúvidas?</h4>
+        <p style="font-size:0.85rem;color:#777;margin-bottom:16px;line-height:1.5;">Fale com um especialista agora mesmo. Atendimento rápido e sem compromisso.</p>
+        <a href="https://wa.me/5565993510460?text=Olá!%20Li%20um%20artigo%20no%20blog%20da%20Aprimore%20BPO%20e%20gostaria%20de%20tirar%20uma%20dúvida." target="_blank" rel="noopener" class="btn btn-verde" style="width:100%;justify-content:center;font-size:0.88rem;">
+          <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+        </a>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<!-- ========== NEWSLETTER ========== -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-text">
+        <h2>Receba Conteúdo<br><span>Financeiro Toda Semana</span></h2>
+        <p>Junte-se a centenas de empresários que recebem dicas práticas sobre gestão financeira, fluxo de caixa e crescimento empresarial. Sem spam. Apenas valor.</p>
+        <div style="display:flex;gap:24px;margin-top:24px;">
+          <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.75);font-size:0.88rem;">
+            <i class="fas fa-check-circle" style="color:var(--dourado);"></i>
+            Conteúdo gratuito
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.75);font-size:0.88rem;">
+            <i class="fas fa-check-circle" style="color:var(--dourado);"></i>
+            Cancele quando quiser
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="newsletter-form">
+          <input type="text" placeholder="Seu nome" aria-label="Nome completo">
+          <input type="email" placeholder="Seu melhor e-mail" aria-label="E-mail">
+          <button class="btn btn-dourado">
+            <i class="fas fa-paper-plane"></i> Quero Receber Conteúdo Gratuito
+          </button>
+          <p class="lgpd-note">
+            <i class="fas fa-shield-alt"></i> Seus dados estão protegidos. Não compartilhamos com terceiros. Conforme a LGPD (Lei 13.709/2018).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="../images/logo.png" alt="Aprimore BPO" width="160" height="40" loading="lazy">
+        <p>Transformamos o financeiro da sua empresa em uma vantagem competitiva. BPO Financeiro especializado para PMEs.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram Aprimore BPO" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn Aprimore BPO" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/5565993510460" aria-label="WhatsApp Aprimore BPO" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="servicos.html#conciliacao">Conciliação Bancária</a></li>
+          <li><a href="servicos.html#fluxo">Fluxo de Caixa</a></li>
+          <li><a href="servicos.html#dre">DRE Gerencial</a></li>
+          <li><a href="servicos.html#indicadores">Indicadores Financeiros</a></li>
+          <li><a href="servicos.html#planejamento">Planejamento Financeiro</a></li>
+          <li><a href="servicos.html#consultoria">Consultoria</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="diagnostico.html">Diagnóstico Grátis</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <div class="footer-contact">
+          <div class="footer-contact-item">
+            <i class="fas fa-phone" style="color:var(--dourado)"></i>
+            <a href="tel:+5565993510460">(65) 99351-0460</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fab fa-whatsapp" style="color:var(--dourado)"></i>
+            <a href="https://wa.me/5565993510460" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-map-marker-alt" style="color:var(--dourado)"></i>
+            <span>Várzea Grande / MT</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-globe" style="color:var(--dourado)"></i>
+            <span>Atendimento Brasil</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Aprimore BPO. Todos os direitos reservados.</span>
+      <span class="footer-lgpd">
+        <i class="fas fa-shield-alt"></i> Este site está em conformidade com a LGPD (Lei 13.709/2018)
+      </span>
+      <a href="politica-privacidade.html" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.82rem">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== WHATSAPP FLOAT ========== -->
+<a href="https://wa.me/5565993510460?text=Olá!%20Vi%20o%20blog%20da%20Aprimore%20BPO%20e%20gostaria%20de%20saber%20mais."
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Falar com a Aprimore BPO no WhatsApp">
+  <i class="fab fa-whatsapp" style="color:#fff;font-size:1.8rem"></i>
+</a>
+
+<!-- JS -->
+<script src="../js/main.js"></script>
+<script>
+  // Category filter
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

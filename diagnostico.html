@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico Financeiro Gratuito | Aprimore BPO</title>
+  <meta name="description" content="Faça agora o Raio-X Financeiro da sua empresa gratuitamente. Responda 20 perguntas e receba um relatório personalizado com seu Score Financeiro.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.aprimorebpo.com.br/pages/diagnostico.html">
+
+  <!-- Schema FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Diagnóstico Financeiro Gratuito — Aprimore BPO",
+    "description": "Raio-X Financeiro Empresarial: descubra a saúde financeira da sua empresa em minutos.",
+    "url": "https://www.aprimorebpo.com.br/pages/diagnostico.html"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    body { background: var(--cinza-bg); }
+
+    /* Multi-step wizard container */
+    .diag-container { max-width: 840px; margin: 0 auto; padding: 0 24px 80px; }
+    .diag-card {
+      background: var(--branco);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-md);
+    }
+    @media (max-width:600px) { .diag-card { padding: 28px 20px; } }
+
+    /* Form Step */
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    /* --- GAUGE SVG RESULT --- */
+    .gauge-outer { text-align:center; padding: 20px 0; }
+    #gaugeScore {
+      font-size: 4rem; font-weight: 900;
+      fill: var(--verde);
+    }
+    #gaugeClass { font-size: 1.1rem; font-weight: 700; fill: var(--dourado); }
+
+    /* Result section */
+    .result-wrap { animation: fadeInUp 0.5s ease; }
+    .score-card {
+      background: linear-gradient(135deg, var(--verde) 0%, var(--verde-mid) 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--branco);
+    }
+    .score-num-big {
+      font-size: 5rem; font-weight: 900;
+      color: var(--dourado);
+      line-height: 1;
+    }
+    .score-label-big {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--branco);
+      margin-bottom: 8px;
+    }
+    .score-desc { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 480px; margin: 0 auto; }
+    .score-bar-container {
+      background: rgba(255,255,255,0.15);
+      border-radius: 50px;
+      height: 10px;
+      max-width: 400px;
+      margin: 24px auto 0;
+      overflow: hidden;
+    }
+    .score-bar-fill {
+      height: 100%;
+      background: var(--dourado);
+      border-radius: 50px;
+      transition: width 1.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .result-section-card {
+      background: var(--branco);
+      border: 1px solid var(--cinza-light);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+    .result-section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--verde);
+      margin-bottom: 16px;
+    }
+    .result-section-icon {
+      width: 36px; height: 36px;
+      background: var(--dourado-pale);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .result-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: var(--cinza-text);
+      line-height: 1.6;
+    }
+    .result-item .ri-dot { color: var(--dourado); font-size: 0.6rem; margin-top: 7px; flex-shrink: 0; }
+    .alert-box {
+      display: flex; align-items: flex-start;
+      gap: 14px;
+      background: #fff8f0;
+      border: 1px solid #f5d5a0;
+      border-left: 4px solid var(--dourado);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .alert-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .cta-result {
+      background: linear-gradient(135deg, var(--verde), var(--verde-mid));
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .cta-result h3 { color: var(--branco); margin-bottom: 12px; }
+    .cta-result p  { color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+    .cta-result-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* Checkbox area LGPD */
+    .lgpd-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 20px;
+      font-size: 0.88rem;
+      color: var(--cinza-text);
+      cursor: pointer;
+    }
+    .lgpd-check input { margin-top: 2px; accent-color: var(--verde); }
+    .lgpd-check a { color: var(--verde); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../images/logo.png" alt="Aprimore BPO" width="160" height="40">
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="diagnostico.html" class="active">Diagnóstico</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/5565993510460" target="_blank" rel="noopener" class="btn btn-verde btn-sm">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="diag-hero">
+  <div class="container">
+    <div class="badge" style="background:rgba(196,166,125,0.1);border-color:rgba(196,166,125,0.4);color:var(--dourado);margin-bottom:20px">
+      <i class="fas fa-star"></i> 100% Gratuito — Sem Compromisso
+    </div>
+    <h1>Raio-X Financeiro<br><span style="color:var(--dourado)">Empresarial</span></h1>
+    <p>Responda 20 perguntas e descubra o Score Financeiro da sua empresa. Receba um relatório completo com análise, riscos e plano de ação personalizado.</p>
+    <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:32px">
+      <div style="text-align:center">
+        <div style="font-size:1.5rem;font-weight:900;color:var(--dourado)">5 min</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);font-weight:700;text-transform:uppercase">Para responder</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:1.5rem;font-weight:900;color:var(--dourado)">20</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);font-weight:700;text-transform:uppercase">Perguntas</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-size:1.5rem;font-weight:900;color:var(--dourado)">1</div>
+        <div style="font-size:0.8rem;color:rgba(255,255,255,0.6);font-weight:700;text-transform:uppercase">Relatório personalizado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO WIZARD -->
+<div class="diag-container" style="margin-top:-32px;position:relative;z-index:2">
+
+  <!-- STEP 0: DADOS DO EMPRESÁRIO -->
+  <div id="step-0" class="form-step active">
+    <div class="diag-card">
+      <div class="step-num">Etapa 1 de 3 — Seus Dados</div>
+      <h2 class="text-verde" style="margin-bottom:8px">Vamos começar pelo básico</h2>
+      <p style="margin-bottom:32px">Informe seus dados para que possamos enviar o relatório personalizado.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="nome">Nome Completo *</label>
+          <input type="text" id="nome" class="form-input" placeholder="Seu nome completo" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="empresa">Nome da Empresa *</label>
+          <input type="text" id="empresa" class="form-input" placeholder="Nome da sua empresa" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="cargo">Seu Cargo *</label>
+          <select id="cargo" class="form-select" required>
+            <option value="">Selecione seu cargo</option>
+            <option>Sócio/Fundador</option>
+            <option>CEO/Diretor</option>
+            <option>Gestor Financeiro</option>
+            <option>Gerente</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="segmento">Segmento da Empresa *</label>
+          <select id="segmento" class="form-select" required>
+            <option value="">Selecione o segmento</option>
+            <option>Infoprodutor / Criador de Conteúdo</option>
+            <option>Clínica Médica / Odontológica / Estética</option>
+            <option>Agência de Marketing / Publicidade</option>
+            <option>Empresa de Serviços</option>
+            <option>Escritório / Consultoria</option>
+            <option>Comércio / Varejo</option>
+            <option>Indústria</option>
+            <option>Outro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="email">E-mail *</label>
+          <input type="email" id="email" class="form-input" placeholder="seu@email.com.br" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="whatsapp">WhatsApp *</label>
+          <input type="tel" id="whatsapp" class="form-input" placeholder="(00) 00000-0000" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="cidade">Cidade *</label>
+          <input type="text" id="cidade" class="form-input" placeholder="Sua cidade" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="estado">Estado *</label>
+          <select id="estado" class="form-select" required>
+            <option value="">UF</option>
+            <option>AC</option><option>AL</option><option>AM</option><option>AP</option>
+            <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+            <option>GO</option><option>MA</option><option>MG</option><option selected>MT</option>
+            <option>MS</option><option>PA</option><option>PB</option><option>PE</option>
+            <option>PI</option><option>PR</option><option>RJ</option><option>RN</option>
+            <option>RO</option><option>RR</option><option>RS</option><option>SC</option>
+            <option>SE</option><option>SP</option><option>TO</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="faturamento">Faturamento Médio Mensal *</label>
+          <select id="faturamento" class="form-select" required>
+            <option value="">Selecione a faixa</option>
+            <option>Até R$ 10.000</option>
+            <option>R$ 10.001 a R$ 30.000</option>
+            <option>R$ 30.001 a R$ 80.000</option>
+            <option>R$ 80.001 a R$ 200.000</option>
+            <option>R$ 200.001 a R$ 500.000</option>
+            <option>Acima de R$ 500.000</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="funcionarios">Número de Funcionários</label>
+          <select id="funcionarios" class="form-select">
+            <option value="">Selecione</option>
+            <option>Só eu (MEI / Solopreneur)</option>
+            <option>2 a 5 funcionários</option>
+            <option>6 a 15 funcionários</option>
+            <option>16 a 50 funcionários</option>
+            <option>Mais de 50 funcionários</option>
+          </select>
+        </div>
+      </div>
+
+      <label class="lgpd-check">
+        <input type="checkbox" id="lgpdCheck">
+        Concordo com a <a href="politica-privacidade.html" target="_blank">Política de Privacidade</a> e autorizo o uso dos meus dados para receber o relatório e contato da Aprimore BPO, conforme a LGPD.
+      </label>
+
+      <div style="margin-top:32px;text-align:right">
+        <button class="btn btn-primary btn-lg" onclick="startDiag()">
+          Iniciar Diagnóstico <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 1: QUESTIONÁRIO -->
+  <div id="step-1" class="form-step">
+    <div class="diag-card">
+      <div class="progress-label">
+        <span id="progressText">Pergunta 1 de 20</span>
+        <span id="progressPct">5%</span>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progressFill" style="width:5%"></div>
+      </div>
+
+      <div id="questionArea"></div>
+
+      <div class="diag-nav" style="margin-top:32px">
+        <button class="btn btn-outline" id="btnPrev" onclick="prevQuestion()" style="color:var(--verde);border-color:var(--cinza-light)">
+          <i class="fas fa-arrow-left"></i> Anterior
+        </button>
+        <button class="btn btn-primary" id="btnNext" onclick="nextQuestion()">
+          Próxima <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: RESULTADO -->
+  <div id="step-2" class="form-step">
+    <div class="result-wrap">
+
+      <!-- Score Principal -->
+      <div class="score-card">
+        <div style="font-size:0.9rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;opacity:0.7;margin-bottom:16px">
+          Seu Score Financeiro
+        </div>
+        <div class="score-num-big" id="resultScore">0</div>
+        <div class="score-label-big" id="resultClass">Calculando...</div>
+        <div class="score-bar-container">
+          <div class="score-bar-fill" id="resultBar" style="width:0%"></div>
+        </div>
+        <p class="score-desc" id="resultDesc" style="margin-top:20px"></p>
+      </div>
+
+      <!-- Sumário Executivo -->
+      <div class="result-section-card">
+        <div class="result-section-title">
+          <div class="result-section-icon">📋</div>
+          Resumo Executivo
+        </div>
+        <p id="resultSummary" style="color:var(--cinza-text);line-height:1.75"></p>
+      </div>
+
+      <!-- Problemas Encontrados -->
+      <div class="result-section-card">
+        <div class="result-section-title">
+          <div class="result-section-icon">⚠️</div>
+          Principais Problemas Identificados
+        </div>
+        <ul class="result-list" id="resultProblems"></ul>
+      </div>
+
+      <!-- Riscos -->
+      <div class="result-section-card">
+        <div class="result-section-title">
+          <div class="result-section-icon">🔴</div>
+          Riscos para o seu Negócio
+        </div>
+        <ul class="result-list" id="resultRisks"></ul>
+      </div>
+
+      <!-- Oportunidades -->
+      <div class="result-section-card">
+        <div class="result-section-title">
+          <div class="result-section-icon">🟢</div>
+          Oportunidades de Melhoria
+        </div>
+        <ul class="result-list" id="resultOpportunities"></ul>
+      </div>
+
+      <!-- Plano de Ação -->
+      <div class="result-section-card">
+        <div class="result-section-title">
+          <div class="result-section-icon">🗓️</div>
+          Plano de Ação — Próximos 30 Dias
+        </div>
+        <ul class="result-list" id="resultActions"></ul>
+      </div>
+
+      <!-- Alerta BPO -->
+      <div class="alert-box">
+        <div class="alert-icon">💡</div>
+        <div>
+          <strong style="color:var(--verde)">Como o BPO Financeiro pode ajudar?</strong>
+          <p id="resultBPO" style="margin-top:8px;font-size:0.95rem;color:var(--cinza-text)"></p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-result">
+        <h3>Quer transformar esses resultados em realidade?</h3>
+        <p>Nossos especialistas estão prontos para analisar seu caso e montar uma estratégia personalizada para a sua empresa.</p>
+        <div class="cta-result-btns">
+          <a href="https://wa.me/5565993510460?text=Olá!%20Acabei%20de%20fazer%20o%20diagnóstico%20e%20quero%20conversar%20com%20um%20especialista." 
+             target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+            <i class="fab fa-whatsapp"></i> Falar com Especialista
+          </a>
+          <button class="btn btn-primary btn-lg" onclick="window.print()">
+            <i class="fas fa-download"></i> Salvar Relatório (PDF)
+          </button>
+        </div>
+        <p style="color:rgba(255,255,255,0.55);font-size:0.82rem;margin-top:20px">
+          <i class="fas fa-shield-alt"></i> Seus dados são tratados com total sigilo. LGPD em conformidade.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- /diag-container -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.08)">
+      <img src="../images/logo.png" alt="Aprimore BPO" height="36">
+      <span style="font-size:0.82rem;color:rgba(255,255,255,0.4)">© 2025 Aprimore BPO. LGPD em conformidade.</span>
+      <a href="politica-privacidade.html" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.82rem">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5565993510460" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp" style="color:#fff;font-size:1.8rem"></i>
+</a>
+
+<script src="../js/main.js"></script>
+<script>
+/* =========================================================
+   APRIMORE BPO — DIAGNÓSTICO FINANCEIRO ENGINE
+   ========================================================= */
+
+// ---- DADOS DO FORMULÁRIO ----
+const formData = {};
+
+// ---- PERGUNTAS (20 questões, cada uma com 4 opções e pesos 0,1,2,3) ----
+const questions = [
+  {
+    num: 1, cat: "Controles Básicos",
+    q: "Você possui controles financeiros básicos (contas a pagar, a receber e caixa) funcionando?",
+    hint: "Considere se esses controles estão atualizados regularmente.",
+    opts: [
+      { text: "Não tenho nenhum controle", score: 0 },
+      { text: "Tenho algum controle, mas está desatualizado", score: 1 },
+      { text: "Tenho controles, mas não são sistemáticos", score: 2 },
+      { text: "Sim, todos atualizados e funcionando", score: 3 }
+    ]
+  },
+  {
+    num: 2, cat: "Fluxo de Caixa",
+    q: "Com que frequência você atualiza e acompanha o fluxo de caixa da empresa?",
+    hint: "Fluxo de caixa é o controle das entradas e saídas de dinheiro.",
+    opts: [
+      { text: "Nunca faço fluxo de caixa", score: 0 },
+      { text: "Faço às vezes, sem regularidade", score: 1 },
+      { text: "Faço mensalmente", score: 2 },
+      { text: "Atualizo diariamente ou semanalmente", score: 3 }
+    ]
+  },
+  {
+    num: 3, cat: "Margem de Lucro",
+    q: "Você conhece a margem de lucro real da sua empresa neste mês?",
+    hint: "Margem de lucro = (Lucro Líquido / Receita Total) × 100",
+    opts: [
+      { text: "Não sei quanto lucro", score: 0 },
+      { text: "Sei aproximadamente, mas não tenho certeza", score: 1 },
+      { text: "Calculo eventualmente, não todo mês", score: 2 },
+      { text: "Sim, calculo e acompanho mensalmente", score: 3 }
+    ]
+  },
+  {
+    num: 4, cat: "DRE Gerencial",
+    q: "Sua empresa possui e utiliza DRE (Demonstrativo de Resultado) gerencial?",
+    hint: "O DRE mostra se a empresa teve lucro ou prejuízo no período.",
+    opts: [
+      { text: "Não sei o que é DRE", score: 0 },
+      { text: "Sei o que é, mas não tenho", score: 1 },
+      { text: "Tenho, mas não uso regularmente", score: 2 },
+      { text: "Sim, utilizo todo mês para tomar decisões", score: 3 }
+    ]
+  },
+  {
+    num: 5, cat: "Conciliação Bancária",
+    q: "Você realiza conciliação bancária regularmente?",
+    hint: "Conciliação = comparar extratos bancários com registros internos.",
+    opts: [
+      { text: "Nunca faço", score: 0 },
+      { text: "Raramente, quando lembro", score: 1 },
+      { text: "Mensalmente", score: 2 },
+      { text: "Diária ou semanalmente", score: 3 }
+    ]
+  },
+  {
+    num: 6, cat: "Separação de Contas",
+    q: "Você separa as finanças pessoais das empresariais?",
+    hint: "Misturar contas é um dos maiores erros financeiros do empresário.",
+    opts: [
+      { text: "Misturo tudo em uma conta só", score: 0 },
+      { text: "Tento separar, mas nem sempre consigo", score: 1 },
+      { text: "Tenho contas separadas, mas ainda mistura às vezes", score: 2 },
+      { text: "Sim, totalmente separado com pró-labore definido", score: 3 }
+    ]
+  },
+  {
+    num: 7, cat: "Planejamento",
+    q: "Sua empresa possui objetivos financeiros e orçamento para o ano?",
+    hint: "Orçamento anual = planejar receitas e despesas para os próximos 12 meses.",
+    opts: [
+      { text: "Não planejo o financeiro", score: 0 },
+      { text: "Tenho metas vagas, sem números definidos", score: 1 },
+      { text: "Tenho metas, mas sem orçamento estruturado", score: 2 },
+      { text: "Sim, tenho orçamento anual e reviso trimestralmente", score: 3 }
+    ]
+  },
+  {
+    num: 8, cat: "Indicadores",
+    q: "Você acompanha indicadores financeiros da empresa (lucratividade, rentabilidade, ticket médio)?",
+    hint: "Indicadores são métricas que mostram a saúde financeira do negócio.",
+    opts: [
+      { text: "Não acompanho nenhum indicador", score: 0 },
+      { text: "Acompanho só o faturamento", score: 1 },
+      { text: "Acompanho 2 ou 3 indicadores", score: 2 },
+      { text: "Sim, tenho dashboard completo de indicadores", score: 3 }
+    ]
+  },
+  {
+    num: 9, cat: "Ponto de Equilíbrio",
+    q: "Você conhece o ponto de equilíbrio (break-even) da sua empresa?",
+    hint: "É o valor mínimo que precisa faturar para cobrir todos os custos.",
+    opts: [
+      { text: "Não sei o que é ponto de equilíbrio", score: 0 },
+      { text: "Sei o que é, mas não calculei o meu", score: 1 },
+      { text: "Calculei uma vez, mas não revisou recentemente", score: 2 },
+      { text: "Sim, sei exatamente e reviso periodicamente", score: 3 }
+    ]
+  },
+  {
+    num: 10, cat: "Custos Fixos e Variáveis",
+    q: "Você identifica e classifica seus custos em fixos e variáveis?",
+    hint: "Custos fixos = aluguel, salários. Custos variáveis = comissões, matéria-prima.",
+    opts: [
+      { text: "Não faço essa distinção", score: 0 },
+      { text: "Conheço o conceito, mas não aplico formalmente", score: 1 },
+      { text: "Faço às vezes, mas não sistematicamente", score: 2 },
+      { text: "Sim, identifico, classifico e analiso regularmente", score: 3 }
+    ]
+  },
+  {
+    num: 11, cat: "Inadimplência",
+    q: "Como está o controle de inadimplência (contas a receber em atraso)?",
+    hint: "Clientes que não pagam impactam diretamente seu caixa.",
+    opts: [
+      { text: "Não tenho controle de inadimplência", score: 0 },
+      { text: "Sei que existe, mas não mensuro", score: 1 },
+      { text: "Acompanho, mas sem processo de cobrança formal", score: 2 },
+      { text: "Tenho processo ativo de cobrança e acompanhamento", score: 3 }
+    ]
+  },
+  {
+    num: 12, cat: "Capital de Giro",
+    q: "Você sabe quanto de capital de giro sua empresa precisa para funcionar?",
+    hint: "Capital de giro = dinheiro necessário para a operação do dia a dia.",
+    opts: [
+      { text: "Não sei o que é capital de giro", score: 0 },
+      { text: "Sei o conceito, mas não calculei o meu", score: 1 },
+      { text: "Tenho uma noção, mas sem cálculo preciso", score: 2 },
+      { text: "Sim, sei exatamente e monitoro mensalmente", score: 3 }
+    ]
+  },
+  {
+    num: 13, cat: "Precificação",
+    q: "Como você define o preço dos seus produtos ou serviços?",
+    hint: "Precificação correta garante margem de lucro e competitividade.",
+    opts: [
+      { text: "Pelo que o concorrente cobra ou por intuição", score: 0 },
+      { text: "Tenho uma ideia dos custos, mas sem cálculo formal", score: 1 },
+      { text: "Calculo custos, mas a margem não é precisa", score: 2 },
+      { text: "Sim, precificação baseada em custo total + margem definida", score: 3 }
+    ]
+  },
+  {
+    num: 14, cat: "Pró-labore",
+    q: "Você tem um pró-labore definido e respeita esse limite?",
+    hint: "Pró-labore é a retirada do sócio definida como despesa da empresa.",
+    opts: [
+      { text: "Retiro o que preciso sem critério", score: 0 },
+      { text: "Tenho um valor em mente, mas não é formal", score: 1 },
+      { text: "Tenho definido, mas às vezes excedo", score: 2 },
+      { text: "Sim, respeito o pró-labore definido e formalizado", score: 3 }
+    ]
+  },
+  {
+    num: 15, cat: "Relatórios",
+    q: "Você recebe ou produz relatórios gerenciais mensais sobre o desempenho financeiro?",
+    hint: "Relatórios gerenciais são ferramentas essenciais para decisão estratégica.",
+    opts: [
+      { text: "Não tenho nenhum relatório", score: 0 },
+      { text: "Recebo só o balanço do contador", score: 1 },
+      { text: "Tenho algum relatório, mas básico", score: 2 },
+      { text: "Sim, relatório gerencial completo todo mês", score: 3 }
+    ]
+  },
+  {
+    num: 16, cat: "Gestão de Fornecedores",
+    q: "Você negocia prazos e condições com fornecedores para proteger seu caixa?",
+    hint: "Boas negociações com fornecedores melhoram o fluxo de caixa.",
+    opts: [
+      { text: "Não negocio, aceito o que oferecem", score: 0 },
+      { text: "Negocio às vezes, sem estratégia definida", score: 1 },
+      { text: "Negocio, mas poderia ser mais sistemático", score: 2 },
+      { text: "Sim, tenho processo de negociação e análise de condições", score: 3 }
+    ]
+  },
+  {
+    num: 17, cat: "Impostos",
+    q: "Você acompanha e planeja o pagamento de impostos da empresa?",
+    hint: "Planejamento tributário evita surpresas e penalidades.",
+    opts: [
+      { text: "Pago quando recebo a cobrança, sem planejamento", score: 0 },
+      { text: "Tenho noção, mas sem planejamento formal", score: 1 },
+      { text: "Planejo parcialmente com o contador", score: 2 },
+      { text: "Sim, planejamento tributário ativo e monitorado", score: 3 }
+    ]
+  },
+  {
+    num: 18, cat: "Investimentos",
+    q: "Você tem critérios claros para decidir investimentos na empresa?",
+    hint: "Investimentos devem ser avaliados pelo retorno esperado e impacto no caixa.",
+    opts: [
+      { text: "Invisto por oportunidade, sem análise", score: 0 },
+      { text: "Analiso superficialmente antes de decidir", score: 1 },
+      { text: "Tenho alguns critérios, mas poderia ser mais rigoroso", score: 2 },
+      { text: "Sim, analiso ROI, fluxo de caixa e prazo de retorno", score: 3 }
+    ]
+  },
+  {
+    num: 19, cat: "Reserva de Emergência",
+    q: "Sua empresa possui reserva financeira ou fundo de contingência?",
+    hint: "Especialistas recomendam reserva equivalente a 3 a 6 meses de custos fixos.",
+    opts: [
+      { text: "Não tenho reserva alguma", score: 0 },
+      { text: "Tenho uma reserva pequena e insuficiente", score: 1 },
+      { text: "Tenho reserva, mas abaixo do ideal", score: 2 },
+      { text: "Sim, tenho reserva de pelo menos 3 meses de operação", score: 3 }
+    ]
+  },
+  {
+    num: 20, cat: "Decisões Estratégicas",
+    q: "Suas decisões estratégicas de negócio são baseadas em dados financeiros?",
+    hint: "Exemplos: contratar, investir, expandir, reduzir custos.",
+    opts: [
+      { text: "Decido por intuição e feeling", score: 0 },
+      { text: "Olho alguns números, mas decido mais por feeling", score: 1 },
+      { text: "Uso dados, mas gostaria de ter mais informação", score: 2 },
+      { text: "Sim, todas as decisões são baseadas em dados concretos", score: 3 }
+    ]
+  }
+];
+
+let currentQ  = 0;
+let answers   = new Array(questions.length).fill(null);
+let totalScore = 0;
+
+// ---- VALIDATION + START ----
+function startDiag() {
+  const nome    = document.getElementById('nome').value.trim();
+  const empresa = document.getElementById('empresa').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const whats   = document.getElementById('whatsapp').value.trim();
+  const lgpd    = document.getElementById('lgpdCheck').checked;
+  const cargo   = document.getElementById('cargo').value;
+  const seg     = document.getElementById('segmento').value;
+  const fat     = document.getElementById('faturamento').value;
+
+  if (!nome || !empresa || !email || !whats || !cargo || !seg || !fat) {
+    alert('Por favor, preencha todos os campos obrigatórios (*).');
+    return;
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) { alert('Por favor, informe um e-mail válido.'); return; }
+  if (!lgpd) { alert('Para continuar, você precisa aceitar a Política de Privacidade (LGPD).'); return; }
+
+  formData.nome = nome; formData.empresa = empresa; formData.email = email;
+  formData.whatsapp = whats; formData.cargo = cargo; formData.segmento = seg;
+  formData.faturamento = fat;
+  formData.cidade  = document.getElementById('cidade').value;
+  formData.estado  = document.getElementById('estado').value;
+  formData.funcionarios = document.getElementById('funcionarios').value;
+
+  showStep(1);
+  renderQuestion(0);
+}
+
+function showStep(n) {
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-' + n).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ---- RENDER QUESTION ----
+function renderQuestion(idx) {
+  const q = questions[idx];
+  const pct = Math.round(((idx + 1) / questions.length) * 100);
+  document.getElementById('progressText').textContent = `Pergunta ${idx + 1} de ${questions.length}`;
+  document.getElementById('progressPct').textContent  = pct + '%';
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('btnPrev').style.visibility = idx === 0 ? 'hidden' : 'visible';
+  document.getElementById('btnNext').textContent = idx === questions.length - 1 
+    ? 'Ver Resultado' : 'Próxima ';
+
+  const area = document.getElementById('questionArea');
+  area.innerHTML = `
+    <div class="step-num">${q.cat}</div>
+    <div class="step-question">${q.q}</div>
+    <div class="step-hint">${q.hint}</div>
+    <div class="option-list">
+      ${q.opts.map((o, i) => `
+        <button class="option-btn ${answers[idx] === i ? 'selected' : ''}" 
+                onclick="selectOption(${i})" data-idx="${i}">
+          <span class="option-radio"></span>
+          ${o.text}
+        </button>
+      `).join('')}
+    </div>
+  `;
+}
+
+function selectOption(i) {
+  answers[currentQ] = i;
+  document.querySelectorAll('.option-btn').forEach((b, bi) => {
+    b.classList.toggle('selected', bi === i);
+  });
+}
+
+function nextQuestion() {
+  if (answers[currentQ] === null) {
+    alert('Por favor, selecione uma resposta antes de avançar.');
+    return;
+  }
+  if (currentQ < questions.length - 1) {
+    currentQ++;
+    renderQuestion(currentQ);
+  } else {
+    generateResult();
+  }
+}
+
+function prevQuestion() {
+  if (currentQ > 0) { currentQ--; renderQuestion(currentQ); }
+}
+
+// ---- CALCULATE SCORE ----
+function generateResult() {
+  totalScore = 0;
+  answers.forEach((a, i) => {
+    if (a !== null) totalScore += questions[i].opts[a].score;
+  });
+  const maxScore = questions.length * 3; // 60
+  const pct = Math.round((totalScore / maxScore) * 100);
+
+  let cls, desc, color;
+  if (pct >= 90) {
+    cls = 'Excelente'; color = '#22c55e';
+    desc = 'Sua empresa tem uma gestão financeira madura e estruturada. Continue aprimorando para chegar à excelência absoluta.';
+  } else if (pct >= 70) {
+    cls = 'Muito Bom'; color = '#84cc16';
+    desc = 'Você tem boas práticas financeiras, mas ainda existem pontos importantes de melhoria que podem impactar o seu crescimento.';
+  } else if (pct >= 50) {
+    cls = 'Atenção'; color = '#f59e0b';
+    desc = 'Sua empresa tem bases financeiras, mas existem lacunas críticas que estão limitando o crescimento e colocando o negócio em risco.';
+  } else if (pct >= 30) {
+    cls = 'Crítico'; color = '#ef4444';
+    desc = 'Sua empresa enfrenta sérios problemas financeiros que precisam de atenção imediata. O risco de crise de caixa é alto.';
+  } else {
+    cls = 'Emergencial'; color = '#dc2626';
+    desc = 'Situação financeira emergencial. Sem ação imediata, a empresa está em risco real. É urgente estruturar o financeiro.';
+  }
+
+  // Problemas baseados nas respostas
+  const problems = [];
+  const risks = [];
+  const opportunities = [];
+  const actions = [];
+
+  answers.forEach((a, i) => {
+    if (a !== null && a <= 1) {
+      const q = questions[i];
+      problems.push(q.cat + ': ' + getWeakness(i, a));
+    }
+  });
+
+  if (problems.length === 0) problems.push('Nenhum problema crítico identificado. Continue aprimorando os processos.');
+
+  // Riscos genéricos baseados no score
+  if (pct < 70) {
+    risks.push('Risco de crise de caixa por falta de controle financeiro.');
+    risks.push('Decisões estratégicas sem base em dados reais, podendo gerar prejuízos.');
+  }
+  if (answers[5] !== null && answers[5] <= 1) risks.push('Mistura de finanças pessoais e empresariais comprometendo a saúde financeira.');
+  if (answers[2] !== null && answers[2] <= 1) risks.push('Sem conhecimento da margem de lucro real, podendo vender abaixo do custo.');
+  if (answers[18] !== null && answers[18] <= 1) risks.push('Ausência de reserva de emergência coloca a empresa vulnerável a imprevistos.');
+  if (risks.length === 0) risks.push('Baixo risco identificado. Manter a consistência nos controles é fundamental.');
+
+  // Oportunidades
+  opportunities.push('Implantação de DRE mensal para visibilidade real do lucro.');
+  opportunities.push('Definição de indicadores-chave (KPIs) para tomada de decisão estratégica.');
+  if (pct < 70) opportunities.push('Estruturação do fluxo de caixa com projeções de 90 dias.');
+  opportunities.push('Revisão da precificação para maximizar margem de contribuição.');
+  if (answers[12] !== null && answers[12] <= 1) opportunities.push('Cálculo e gestão proativa do capital de giro.');
+
+  // Ações 30 dias
+  actions.push('Semana 1: Separar completamente as contas pessoais e empresariais.');
+  actions.push('Semana 1-2: Levantar e classificar todos os custos fixos e variáveis.');
+  actions.push('Semana 2: Implementar planilha ou sistema de fluxo de caixa diário.');
+  actions.push('Semana 3: Calcular o ponto de equilíbrio e a margem de lucro atual.');
+  actions.push('Semana 4: Produzir o primeiro DRE Gerencial do mês e definir indicadores.');
+  actions.push('Mês 1: Agendar reunião estratégica com especialista em BPO Financeiro.');
+
+  // BPO Message
+  let bpo = '';
+  if (pct < 50) {
+    bpo = `Com base no seu diagnóstico, a sua empresa precisa urgentemente de uma reestruturação financeira completa. O BPO Financeiro da Aprimore BPO pode assumir toda a operação financeira — de imediato — organizando controles, fluxo de caixa, DRE e indicadores. Você para de apagar incêndios e começa a construir um negócio sustentável.`;
+  } else if (pct < 70) {
+    bpo = `Sua empresa já tem algumas bases, mas os gaps identificados estão limitando o potencial de crescimento. Com o BPO Financeiro da Aprimore BPO, você terá um time dedicado para fechar essas lacunas, implementar relatórios gerenciais e transformar dados em estratégia de crescimento.`;
+  } else {
+    bpo = `Você já tem boas práticas financeiras. O BPO Financeiro pode levar sua gestão para o próximo nível: automação de processos, indicadores avançados, planejamento estratégico e muito mais tempo para você focar no crescimento da empresa.`;
+  }
+
+  showStep(2);
+  animateScore(pct, cls, desc, color);
+  populateResults(problems, risks, opportunities, actions, bpo);
+}
+
+function getWeakness(idx, ans) {
+  const weaknesses = [
+    ['Sem controles financeiros básicos', 'Controles desatualizados e inconsistentes'],
+    ['Fluxo de caixa inexistente', 'Fluxo de caixa irregular'],
+    ['Margem de lucro desconhecida', 'Margem apurada sem precisão'],
+    ['DRE inexistente', 'DRE não utilizado para decisão'],
+    ['Conciliação bancária nunca realizada', 'Conciliação rara e inconsistente'],
+    ['Finanças pessoais e empresariais completamente misturadas', 'Separação parcial e inconsistente'],
+    ['Sem planejamento financeiro', 'Metas sem respaldo financeiro'],
+    ['Nenhum indicador acompanhado', 'Apenas faturamento monitorado'],
+    ['Ponto de equilíbrio desconhecido', 'Break-even nunca calculado'],
+    ['Custos não classificados', 'Classificação de custos incipiente'],
+    ['Inadimplência sem controle', 'Inadimplência sem processo de cobrança'],
+    ['Capital de giro desconhecido', 'Capital de giro estimado sem precisão'],
+    ['Precificação por intuição', 'Precificação com base parcial em custos'],
+    ['Pró-labore inexistente', 'Pró-labore informal e inconsistente'],
+    ['Sem relatórios gerenciais', 'Apenas relatórios básicos do contador'],
+    ['Sem negociação com fornecedores', 'Negociação eventual sem estratégia'],
+    ['Sem planejamento tributário', 'Planejamento tributário parcial'],
+    ['Investimentos sem critério', 'Análise superficial antes de investir'],
+    ['Sem reserva de emergência', 'Reserva insuficiente para imprevistos'],
+    ['Decisões por intuição sem dados', 'Alguns dados usados, mas predomina feeling'],
+  ];
+  return weaknesses[idx] ? (ans === 0 ? weaknesses[idx][0] : weaknesses[idx][1]) : 'Ponto de atenção identificado.';
+}
+
+function animateScore(pct, cls, desc, color) {
+  const el = document.getElementById('resultScore');
+  let current = 0;
+  const interval = setInterval(() => {
+    current = Math.min(current + 2, pct);
+    el.textContent = current;
+    if (current >= pct) clearInterval(interval);
+  }, 30);
+  document.getElementById('resultClass').textContent = cls;
+  document.getElementById('resultClass').style.color = color;
+  document.getElementById('resultDesc').textContent = desc;
+  setTimeout(() => {
+    document.getElementById('resultBar').style.width = pct + '%';
+  }, 200);
+}
+
+function populateResults(problems, risks, opps, actions, bpo) {
+  const fillList = (id, items) => {
+    const ul = document.getElementById(id);
+    ul.innerHTML = items.map(it => `
+      <li class="result-item">
+        <span class="ri-dot">●</span>
+        <span>${it}</span>
+      </li>`).join('');
+  };
+  fillList('resultProblems', problems);
+  fillList('resultRisks', risks);
+  fillList('resultOpportunities', opps);
+  fillList('resultActions', actions);
+
+  const summary = `${formData.nome}, com base nas suas respostas, identificamos o nível de maturidade financeira da ${formData.empresa} (${formData.segmento}). Com faturamento na faixa de ${formData.faturamento}, sua empresa apresenta oportunidades claras de otimização financeira que, quando implementadas, podem transformar sua margem e previsibilidade de crescimento.`;
+  document.getElementById('resultSummary').textContent = summary;
+  document.getElementById('resultBPO').textContent = bpo;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Aprimore BPO — Várzea Grande/MT</title>
+  <meta name="description" content="Entre em contato com a Aprimore BPO. Atendemos em Várzea Grande/MT e em todo o Brasil. WhatsApp: (65) 99351-0460.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:64px; align-items:start; }
+    .contact-info-card {
+      background: linear-gradient(135deg, var(--verde), var(--verde-mid));
+      border-radius: var(--radius-lg);
+      padding: 48px 36px;
+      color: var(--branco);
+    }
+    .contact-info-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    .cii-icon {
+      width: 44px; height: 44px;
+      background: rgba(196,166,125,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      color: var(--dourado);
+      flex-shrink: 0;
+    }
+    .cii-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); font-weight: 700; margin-bottom: 4px; }
+    .cii-value { font-size: 0.95rem; font-weight: 700; }
+    .cii-value a { color: var(--branco); text-decoration: none; }
+    .contact-form-card {
+      background: var(--branco);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      box-shadow: var(--shadow-md);
+    }
+    .success-msg {
+      display: none;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      text-align: center;
+      color: #166534;
+    }
+    @media(max-width:768px) { .contact-grid { grid-template-columns:1fr; } .contact-form-card { padding: 28px 20px; } }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo"><img src="../images/logo.png" alt="Aprimore BPO" width="160" height="40"></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="diagnostico.html">Diagnóstico</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="diagnostico.html" class="btn btn-primary btn-sm"><i class="fas fa-chart-line"></i> Diagnóstico Grátis</a>
+        <a href="https://wa.me/5565993510460" target="_blank" rel="noopener" class="btn btn-verde btn-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<section style="background:linear-gradient(135deg,var(--verde),var(--verde-mid));padding:140px 0 80px;text-align:center">
+  <div class="container">
+    <div class="badge" style="background:rgba(196,166,125,0.1);border-color:rgba(196,166,125,0.4);color:var(--dourado);margin-bottom:20px">
+      <span class="badge-dot" style="background:var(--dourado)"></span> Fale Conosco
+    </div>
+    <h1 class="text-branco">Vamos conversar sobre<br><span style="color:var(--dourado)">o seu financeiro?</span></h1>
+    <p style="color:rgba(255,255,255,0.75);font-size:1.1rem;max-width:540px;margin:16px auto 0">
+      Atendemos em Várzea Grande/MT e em todo o Brasil de forma remota. Resposta em até 24h úteis.
+    </p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--cinza-bg)">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="animate-in">
+        <div class="contact-info-card">
+          <h3 style="color:var(--branco);margin-bottom:32px">Informações de Contato</h3>
+
+          <div class="contact-info-item">
+            <div class="cii-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <div class="cii-label">WhatsApp</div>
+              <div class="cii-value"><a href="https://wa.me/5565993510460" target="_blank" rel="noopener">(65) 99351-0460</a></div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="cii-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="cii-label">Telefone</div>
+              <div class="cii-value"><a href="tel:+5565993510460">(65) 99351-0460</a></div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="cii-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="cii-label">Localização</div>
+              <div class="cii-value">Várzea Grande / MT<br><span style="font-size:0.85rem;opacity:0.7">Atendimento Nacional</span></div>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="cii-icon"><i class="fas fa-clock"></i></div>
+            <div>
+              <div class="cii-label">Horário de Atendimento</div>
+              <div class="cii-value">Segunda a Sexta<br>08h às 18h</div>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid rgba(255,255,255,0.12);padding-top:28px;margin-top:8px">
+            <div class="cii-label" style="margin-bottom:16px">Nossas Redes</div>
+            <div style="display:flex;gap:12px">
+              <a href="https://instagram.com/aprimorebpo" target="_blank" rel="noopener" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--branco);text-decoration:none;font-size:1rem;transition:all .3s" onmouseover="this.style.background='var(--dourado)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://wa.me/5565993510460" target="_blank" rel="noopener" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--branco);text-decoration:none;font-size:1rem;transition:all .3s" onmouseover="this.style.background='var(--dourado)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://linkedin.com/company/aprimorebpo" target="_blank" rel="noopener" style="width:40px;height:40px;background:rgba(255,255,255,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--branco);text-decoration:none;font-size:1rem;transition:all .3s" onmouseover="this.style.background='var(--dourado)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--dourado-pale);border:1px solid rgba(196,166,125,0.4);border-radius:var(--radius-md);padding:24px;margin-top:24px">
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <i class="fas fa-bolt" style="color:var(--dourado);margin-top:3px"></i>
+            <div>
+              <strong style="color:var(--verde);font-size:0.95rem">Resposta mais rápida?</strong>
+              <p style="font-size:0.88rem;margin-top:4px">Via WhatsApp respondemos em minutos durante o horário comercial.</p>
+              <a href="https://wa.me/5565993510460?text=Olá!%20Tenho%20interesse%20no%20BPO%20Financeiro%20da%20Aprimore%20BPO." 
+                 target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm" style="margin-top:12px;display:inline-flex">
+                <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="animate-in">
+        <div class="contact-form-card">
+          <h3 style="color:var(--verde);margin-bottom:8px">Envie uma mensagem</h3>
+          <p style="margin-bottom:32px">Preencha o formulário e entraremos em contato em até 24 horas úteis.</p>
+
+          <div id="successMsg" class="success-msg">
+            <i class="fas fa-check-circle" style="font-size:2rem;margin-bottom:12px;display:block"></i>
+            <strong>Mensagem enviada com sucesso!</strong><br>
+            Entraremos em contato em até 24 horas úteis. Enquanto isso, siga-nos no Instagram @aprimorebpo.
+          </div>
+
+          <form id="contactForm" onsubmit="submitForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="cNome">Nome Completo *</label>
+                <input type="text" id="cNome" class="form-input" placeholder="Seu nome" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cEmpresa">Empresa</label>
+                <input type="text" id="cEmpresa" class="form-input" placeholder="Nome da empresa">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="cEmail">E-mail *</label>
+                <input type="email" id="cEmail" class="form-input" placeholder="seu@email.com.br" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cWhats">WhatsApp *</label>
+                <input type="tel" id="cWhats" class="form-input" placeholder="(00) 00000-0000" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cAssunto">Assunto *</label>
+              <select id="cAssunto" class="form-select" required>
+                <option value="">Selecione o assunto</option>
+                <option>Quero contratar o BPO Financeiro</option>
+                <option>Tenho dúvidas sobre os serviços</option>
+                <option>Quero fazer o Diagnóstico Financeiro</option>
+                <option>Quero uma proposta comercial</option>
+                <option>Parceria ou indicação</option>
+                <option>Outro assunto</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cMsg">Mensagem *</label>
+              <textarea id="cMsg" class="form-textarea" placeholder="Conte um pouco sobre a sua empresa e o que você precisa..." required></textarea>
+            </div>
+            <label class="lgpd-check" style="display:flex;align-items:flex-start;gap:10px;margin-bottom:24px;font-size:0.88rem;color:var(--cinza-text);cursor:pointer">
+              <input type="checkbox" id="cLgpd" required style="margin-top:2px;accent-color:var(--verde)">
+              Li e concordo com a <a href="politica-privacidade.html" target="_blank" style="color:var(--verde)">Política de Privacidade</a> e autorizo o uso dos meus dados para contato, conforme a LGPD.
+            </label>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Prefere resolver agora?</h2>
+    <p>Faça o Diagnóstico Financeiro Gratuito e receba um relatório personalizado da saúde financeira da sua empresa.</p>
+    <div class="cta-buttons">
+      <a href="diagnostico.html" class="btn btn-primary btn-lg"><i class="fas fa-chart-line"></i> Diagnóstico Financeiro Grátis</a>
+      <a href="https://wa.me/5565993510460" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:24px 0;border-top:1px solid rgba(255,255,255,0.08)">
+      <img src="../images/logo.png" alt="Aprimore BPO" height="36">
+      <span style="font-size:0.82rem;color:rgba(255,255,255,0.4)">© 2025 Aprimore BPO. LGPD em conformidade.</span>
+      <a href="politica-privacidade.html" style="color:rgba(255,255,255,0.4);text-decoration:none;font-size:0.82rem">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5565993510460" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp" style="color:#fff;font-size:1.8rem"></i>
+</a>
+
+<script src="../js/main.js"></script>
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  // Aqui você pode integrar com Formspree, EmailJS, n8n, Make etc.
+  // Por enquanto simulamos o sucesso
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+  window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
